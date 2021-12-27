@@ -23,11 +23,11 @@ SALIR:BEGIN
 	START TRANSACTION;
 	SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela
     FROM		asistencias a 
-				LEFT JOIN personal p on a.Id_personal = p.Id
-                LEFT JOIN escuelas e on e.Id = p.Id_Escuela
+				LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
+                LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
 	WHERE		a.FechaEntrada = pFecha
-	GROUP BY	p.Id
-    ORDER BY	a.Id asc;
+	GROUP BY	p.IdPersonal
+    ORDER BY	a.IdAsistencia asc;
     -- LIMIT 		pDesde,5;
         
 	SELECT 'OK' AS Mensaje;

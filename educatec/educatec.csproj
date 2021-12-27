@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatos\DConexion.cs" />
+    <Compile Include="CapaLogica\LAsistencias.cs" />
     <Compile Include="CapaPresentacion\formAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,5 +150,6 @@
   <ItemGroup>
     <None Include="recursos\nueva-asistencia.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
