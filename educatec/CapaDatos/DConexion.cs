@@ -4,16 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
-namespace educatec.datos
+namespace educatec.CapaDatos
 {
-    public class DPersonal
+    public class DConexion
     {
         MySqlConnection Con = new MySqlConnection("datasource =localhost;username = root;password = '';database=educatec");
 
-        public void DConexion()
+        public DConexion()
         {
             AbrirConexion();
         }

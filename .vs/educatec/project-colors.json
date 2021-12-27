@@ -5,7 +5,12 @@
       "ProjectGuid": "caa2b2a4-1f3f-4258-a5fc-c5d923c366c3",
       "DisplayName": "educatec",
       "ColorIndex": 0
+    },
+    "0b61ddd1-64b3-452e-aafa-aa22585b05c6": {
+      "ProjectGuid": "0b61ddd1-64b3-452e-aafa-aa22585b05c6",
+      "DisplayName": "CapaDatos",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

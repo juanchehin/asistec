@@ -89,19 +89,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datos\DConexion.cs" />
-    <Compile Include="datos\DPersonal.cs" />
+    <Compile Include="CapaDatos\DConexion.cs" />
+    <Compile Include="CapaPresentacion\formAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formAsistencia.Designer.cs">
+      <DependentUpon>formAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\formAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formAsistencias.Designer.cs">
+      <DependentUpon>formAsistencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\formAsistencia.resx">
+      <DependentUpon>formAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formAsistencias.resx">
+      <DependentUpon>formAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,9 +129,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="negocio\" />
-    <Folder Include="presentacion\" />
-    <Folder Include="recursos\" />
+    <None Include="recursos\educatec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="recursos\nueva-asistencia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
