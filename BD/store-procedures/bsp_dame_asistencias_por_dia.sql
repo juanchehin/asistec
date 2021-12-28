@@ -14,24 +14,23 @@ SALIR:BEGIN
 				NULL AS Id;
 		ROLLBACK;
 	END;
-    -- Controla que la fecha sea obligatoria 
+    -- Controla que la fecha sea fecha
 	IF pFecha = '' OR pFecha IS NULL THEN
 		SELECT 'Debe proveer una fecha' AS Mensaje, NULL AS Id;
 		LEAVE SALIR;
     END IF;
-
+	
 	START TRANSACTION;
-	SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela
-    FROM		asistencias a 
-				LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
-                LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
-	WHERE		a.HorarioEntrada = pFecha
-	GROUP BY	p.IdPersonal
-    ORDER BY	a.IdAsistencia asc;
-    -- LIMIT 		pDesde,5;
-        
-	SELECT 'OK' AS Mensaje;
-    
+		SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela,DATE_FORMAT(a.HorarioEntrada,'%H:%i') as HorarioEntrada,DATE_FORMAT(a.HorarioSalida,'%H:%i') as HorarioSalida
+		FROM		asistencias a 
+					LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
+					LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
+		WHERE		DATE_FORMAT(a.HorarioEntrada,'%Y-%m-%d') = pFecha OR DATE_FORMAT(a.HorarioSalida,'%Y-%m-%d') = pFecha
+		GROUP BY	p.IdPersonal
+		ORDER BY	a.IdAsistencia asc;
+		-- LIMIT 		pDesde,5;
+			
+		SELECT 'OK' AS Mensaje;    
     COMMIT;
 END$$
 DELIMITER ;

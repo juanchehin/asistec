@@ -20,11 +20,10 @@ namespace educatec.CapaPresentacion
             ListarAsistencias();
         }
 
-        public void ListarAsistencias() 
+        public void ListarAsistencias()
         {
             // Message.Show("Educatec" + dtpFecha);
             // Console.WriteLine("dtpFecha en capa negocio es : " + dtpFecha.Value.Date);
-
 
             dataListadoAsistencias.DataSource = objetoCL.ListarAsistencias(dtpFecha.Value.Date);
             dataListadoAsistencias.Columns[0].Visible = false;

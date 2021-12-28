@@ -27,14 +27,16 @@ CREATE TABLE IF NOT EXISTS `asistencias` (
   PRIMARY KEY (`IdAsistencia`),
   KEY `fk_asistencias_personal_idx` (`IdPersonal`),
   CONSTRAINT `fk_asistencias_personal` FOREIGN KEY (`IdPersonal`) REFERENCES `personal` (`IdPersonal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla educatec.asistencias: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla educatec.asistencias: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
 INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `HorarioSalida`, `Observacion`) VALUES
-	(1, 1, '2021-12-27 00:00:00', '0000-00-00 00:00:00', '-'),
-	(2, 2, '2021-12-27 00:00:00', '0000-00-00 00:00:00', '-'),
-	(3, 2, '2021-12-28 00:00:00', '0000-00-00 00:00:00', '-');
+	(1, 1, '2021-12-27 14:01:00', '2021-12-27 18:02:20', '-'),
+	(2, 2, '2021-12-27 14:10:22', '2021-12-27 18:03:20', '-'),
+	(3, 2, '2021-12-28 14:02:02', '2021-12-28 18:02:20', '-'),
+	(4, 2, '2021-12-28 14:01:20', '2021-12-28 18:03:20', '-'),
+	(5, 1, '2021-12-28 00:00:00', '2021-12-28 00:00:00', '-');
 /*!40000 ALTER TABLE `asistencias` ENABLE KEYS */;
 
 -- Volcando estructura para procedimiento educatec.bsp_alta_asistencia
@@ -94,24 +96,23 @@ SALIR:BEGIN
 				NULL AS Id;
 		ROLLBACK;
 	END;
-    -- Controla que la fecha sea obligatoria 
+    -- Controla que la fecha sea fecha
 	IF pFecha = '' OR pFecha IS NULL THEN
 		SELECT 'Debe proveer una fecha' AS Mensaje, NULL AS Id;
 		LEAVE SALIR;
     END IF;
-
+	
 	START TRANSACTION;
-	SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela
-    FROM		asistencias a 
-				LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
-                LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
-	WHERE		a.HorarioEntrada = pFecha
-	GROUP BY	p.IdPersonal
-    ORDER BY	a.IdAsistencia asc;
-    -- LIMIT 		pDesde,5;
-        
-	SELECT 'OK' AS Mensaje;
-    
+		SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela,DATE_FORMAT(a.HorarioEntrada,'%H:%i') as HorarioEntrada,DATE_FORMAT(a.HorarioSalida,'%H:%i') as HorarioSalida
+		FROM		asistencias a 
+					LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
+					LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
+		WHERE		DATE_FORMAT(a.HorarioEntrada,'%Y-%m-%d') = pFecha OR DATE_FORMAT(a.HorarioSalida,'%Y-%m-%d') = pFecha
+		GROUP BY	p.IdPersonal
+		ORDER BY	a.IdAsistencia asc;
+		-- LIMIT 		pDesde,5;
+			
+		SELECT 'OK' AS Mensaje;    
     COMMIT;
 END//
 DELIMITER ;

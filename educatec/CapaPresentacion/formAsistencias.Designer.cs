@@ -41,10 +41,13 @@
             // 
             // dataListadoAsistencias
             // 
+            this.dataListadoAsistencias.AllowUserToAddRows = false;
+            this.dataListadoAsistencias.AllowUserToDeleteRows = false;
+            this.dataListadoAsistencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListadoAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoAsistencias.Location = new System.Drawing.Point(148, 38);
             this.dataListadoAsistencias.Name = "dataListadoAsistencias";
-            this.dataListadoAsistencias.Size = new System.Drawing.Size(640, 400);
+            this.dataListadoAsistencias.Size = new System.Drawing.Size(1102, 544);
             this.dataListadoAsistencias.TabIndex = 0;
             // 
             // pictureBox1
@@ -71,7 +74,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(515, 12);
+            this.lblFecha.Location = new System.Drawing.Point(994, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(57, 18);
             this.lblFecha.TabIndex = 4;
@@ -79,7 +82,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(572, 12);
+            this.dtpFecha.Location = new System.Drawing.Point(1051, 9);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 5;
@@ -98,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1262, 594);
             this.Controls.Add(this.lblTotalAsistencias);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
@@ -106,6 +109,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataListadoAsistencias);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "formAsistencias";
             this.Text = "Listado de asistencias";
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoAsistencias)).EndInit();
