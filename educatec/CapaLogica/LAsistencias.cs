@@ -8,8 +8,11 @@ namespace educatec.CapaLogica
 {
     public class LAsistencias
     {
-        public int IdAsistencia { get; set; }
-        public string Cargo { get; set; }
-        public double SueldoPorHora { get; set; }
+        public int IdAsistencia  { get; set; }
+        public int IdPersonal { get; set; }
+
+        public DateTime FechaEntrada { get; set; }
+        public DateTime FechaSalida { get; set; }
+        public string Observaciones { get; set; }
     }
 }

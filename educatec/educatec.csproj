@@ -91,6 +91,8 @@
   <ItemGroup>
     <Compile Include="CapaDatos\DConexion.cs" />
     <Compile Include="CapaLogica\LAsistencias.cs" />
+    <Compile Include="CapaLogica\LEscuelas.cs" />
+    <Compile Include="CapaLogica\LPersonal.cs" />
     <Compile Include="CapaPresentacion\formAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
