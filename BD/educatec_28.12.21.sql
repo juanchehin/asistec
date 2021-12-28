@@ -117,6 +117,18 @@ SALIR:BEGIN
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento educatec.bsp_listar_escuelas
+DELIMITER //
+CREATE PROCEDURE `bsp_listar_escuelas`()
+BEGIN 
+	/*
+    Procedimiento que devuelve todas las escuelas de la BD
+    */
+    SELECT	IdEscuela,Escuela
+    FROM	escuelas;    
+END//
+DELIMITER ;
+
 -- Volcando estructura para tabla educatec.escuelas
 CREATE TABLE IF NOT EXISTS `escuelas` (
   `IdEscuela` int(11) NOT NULL AUTO_INCREMENT,

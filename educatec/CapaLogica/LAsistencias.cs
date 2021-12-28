@@ -19,5 +19,17 @@ namespace educatec.CapaLogica
             tabla = objetoCD.ListarAsistencias(pFecha);
             return tabla;
         }
+
+        public static string InsertarAsistencia(int DNI, string Apellidos, string Nombres)
+        {
+            // Console.WriteLine("En insertar , nombre es " + nombre);
+
+            DAsistencias Obj = new DAsistencias();
+            Obj.DNI = DNI;
+            Obj.Apellidos = Apellidos;
+            Obj.Nombres = Nombres;
+
+            return Obj.InsertarAsistencia(Obj);
+        }
     }
 }
