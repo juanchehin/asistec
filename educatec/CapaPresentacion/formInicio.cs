@@ -16,5 +16,19 @@ namespace educatec.CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnNuevaAsistencia_Click(object sender, EventArgs e)
+        {
+            formAsistencia frm = new formAsistencia();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
+            formAsistencias frm = new formAsistencias();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
