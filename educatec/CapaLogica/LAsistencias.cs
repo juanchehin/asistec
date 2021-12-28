@@ -1,5 +1,7 @@
-﻿using System;
+﻿using educatec.CapaDatos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +10,14 @@ namespace educatec.CapaLogica
 {
     public class LAsistencias
     {
-        public int IdAsistencia  { get; set; }
-        public int IdPersonal { get; set; }
+        private DAsistencias objetoCD = new DAsistencias();
 
-        public DateTime FechaEntrada { get; set; }
-        public DateTime FechaSalida { get; set; }
-        public string Observaciones { get; set; }
+        public DataTable ListarAsistencias(DateTime pFecha)
+        {
+            Console.WriteLine("pFecha en capa logicaa es : " + pFecha);
+            DataTable tabla = new DataTable();
+            tabla = objetoCD.ListarAsistencias(pFecha);
+            return tabla;
+        }
     }
 }

@@ -21,19 +21,20 @@ USE `educatec`;
 CREATE TABLE IF NOT EXISTS `asistencias` (
   `IdAsistencia` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id unico de asistencia',
   `IdPersonal` bigint(20) NOT NULL,
-  `FechaEntrada` datetime NOT NULL,
-  `FechaSalida` datetime NOT NULL,
+  `HorarioEntrada` datetime NOT NULL COMMENT 'Posee el la fecha y la hora de entrada del personal',
+  `HorarioSalida` datetime NOT NULL COMMENT 'Posee el la fecha y la hora de salida del personal',
   `Observacion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`IdAsistencia`),
   KEY `fk_asistencias_personal_idx` (`IdPersonal`),
   CONSTRAINT `fk_asistencias_personal` FOREIGN KEY (`IdPersonal`) REFERENCES `personal` (`IdPersonal`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla educatec.asistencias: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla educatec.asistencias: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
-INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `FechaEntrada`, `FechaSalida`, `Observacion`) VALUES
+INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `HorarioSalida`, `Observacion`) VALUES
 	(1, 1, '2021-12-27 00:00:00', '0000-00-00 00:00:00', '-'),
-	(2, 2, '2021-12-27 00:00:00', '0000-00-00 00:00:00', '-');
+	(2, 2, '2021-12-27 00:00:00', '0000-00-00 00:00:00', '-'),
+	(3, 2, '2021-12-28 00:00:00', '0000-00-00 00:00:00', '-');
 /*!40000 ALTER TABLE `asistencias` ENABLE KEYS */;
 
 -- Volcando estructura para procedimiento educatec.bsp_alta_asistencia
@@ -104,7 +105,7 @@ SALIR:BEGIN
     FROM		asistencias a 
 				LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
                 LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
-	WHERE		a.FechaEntrada = pFecha
+	WHERE		a.HorarioEntrada = pFecha
 	GROUP BY	p.IdPersonal
     ORDER BY	a.IdAsistencia asc;
     -- LIMIT 		pDesde,5;

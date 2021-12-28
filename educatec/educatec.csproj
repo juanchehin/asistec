@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatos\DAsistencias.cs" />
     <Compile Include="CapaDatos\DConexion.cs" />
     <Compile Include="CapaLogica\LAsistencias.cs" />
     <Compile Include="CapaLogica\LEscuelas.cs" />

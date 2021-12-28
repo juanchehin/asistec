@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAsistencias));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataListadoAsistencias = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblTotalAsistencias = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoAsistencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataListadoAsistencias
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(148, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(640, 400);
-            this.dataGridView1.TabIndex = 0;
+            this.dataListadoAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoAsistencias.Location = new System.Drawing.Point(148, 38);
+            this.dataListadoAsistencias.Name = "dataListadoAsistencias";
+            this.dataListadoAsistencias.Size = new System.Drawing.Size(640, 400);
+            this.dataListadoAsistencias.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -62,9 +63,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(144, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(163, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Asistencias";
+            this.label1.Text = "Total de Asistencias : ";
             // 
             // lblFecha
             // 
@@ -76,27 +77,38 @@
             this.lblFecha.TabIndex = 4;
             this.lblFecha.Text = "Fecha :";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(572, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpFecha.Location = new System.Drawing.Point(572, 12);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 5;
+            // 
+            // lblTotalAsistencias
+            // 
+            this.lblTotalAsistencias.AutoSize = true;
+            this.lblTotalAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAsistencias.Location = new System.Drawing.Point(301, 13);
+            this.lblTotalAsistencias.Name = "lblTotalAsistencias";
+            this.lblTotalAsistencias.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalAsistencias.TabIndex = 6;
+            this.lblTotalAsistencias.Text = "0";
             // 
             // formAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lblTotalAsistencias);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataListadoAsistencias);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAsistencias";
             this.Text = "Listado de asistencias";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoAsistencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,10 +117,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataListadoAsistencias;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label lblTotalAsistencias;
     }
 }
