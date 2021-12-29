@@ -13,11 +13,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Volcando estructura de base de datos para educatec
-CREATE DATABASE IF NOT EXISTS `educatec` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `educatec`;
+-- Volcando estructura de base de datos para asistec
+CREATE DATABASE IF NOT EXISTS `asistec` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `asistec`;
 
--- Volcando estructura para tabla educatec.asistencias
+-- Volcando estructura para tabla asistec.asistencias
 CREATE TABLE IF NOT EXISTS `asistencias` (
   `IdAsistencia` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id unico de asistencia',
   `IdPersonal` bigint(20) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `asistencias` (
   CONSTRAINT `fk_asistencias_personal` FOREIGN KEY (`IdPersonal`) REFERENCES `personal` (`IdPersonal`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla educatec.asistencias: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.asistencias: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
 INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `HorarioSalida`, `Observacion`, `Estado`) VALUES
 	(1, 1, '2021-12-27 14:01:00', '2021-12-27 18:02:20', '-', NULL),
@@ -40,7 +40,7 @@ INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `Hora
 	(5, 1, '2021-12-28 00:00:00', '2021-12-28 00:00:00', '-', NULL);
 /*!40000 ALTER TABLE `asistencias` ENABLE KEYS */;
 
--- Volcando estructura para procedimiento educatec.bsp_alta_asistencia
+-- Volcando estructura para procedimiento asistec.bsp_alta_asistencia
 DELIMITER //
 CREATE PROCEDURE `bsp_alta_asistencia`(pDNI INT,pIdEscuela INT,pApellidos VARCHAR(60),pNombres VARCHAR(60))
 SALIR:BEGIN
@@ -81,7 +81,7 @@ SALIR:BEGIN
 END//
 DELIMITER ;
 
--- Volcando estructura para procedimiento educatec.bsp_dame_asistencias_por_dia
+-- Volcando estructura para procedimiento asistec.bsp_dame_asistencias_por_dia
 DELIMITER //
 CREATE PROCEDURE `bsp_dame_asistencias_por_dia`(pFecha date)
 SALIR:BEGIN
@@ -118,7 +118,7 @@ SALIR:BEGIN
 END//
 DELIMITER ;
 
--- Volcando estructura para procedimiento educatec.bsp_listar_escuelas
+-- Volcando estructura para procedimiento asistec.bsp_listar_escuelas
 DELIMITER //
 CREATE PROCEDURE `bsp_listar_escuelas`()
 BEGIN 
@@ -130,7 +130,7 @@ BEGIN
 END//
 DELIMITER ;
 
--- Volcando estructura para tabla educatec.escuelas
+-- Volcando estructura para tabla asistec.escuelas
 CREATE TABLE IF NOT EXISTS `escuelas` (
   `IdEscuela` int(11) NOT NULL AUTO_INCREMENT,
   `Escuela` varchar(255) DEFAULT NULL COMMENT 'Nombre de la escuela',
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `escuelas` (
   PRIMARY KEY (`IdEscuela`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla educatec.escuelas: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.escuelas: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `escuelas` DISABLE KEYS */;
 INSERT INTO `escuelas` (`IdEscuela`, `Escuela`, `Observaciones`) VALUES
 	(1, 'Escuela Ej 1', '-'),
@@ -146,9 +146,9 @@ INSERT INTO `escuelas` (`IdEscuela`, `Escuela`, `Observaciones`) VALUES
 	(3, 'Escuela Ej 3', '-');
 /*!40000 ALTER TABLE `escuelas` ENABLE KEYS */;
 
--- Volcando estructura para tabla educatec.personal
+-- Volcando estructura para tabla asistec.personal
 CREATE TABLE IF NOT EXISTS `personal` (
-  `IdPersonal` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Esta tabla contendra los datos del personal el cual asiste al evento de EDUCATEC',
+  `IdPersonal` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Esta tabla contendra los datos del personal el cual asiste al evento de asistec',
   `IdEscuela` int(11) NOT NULL,
   `Apellidos` varchar(60) DEFAULT NULL COMMENT 'Apellidos de la persona la cual se le tomara la asistencia',
   `Nombres` varchar(60) DEFAULT NULL COMMENT 'Nombre de la persona la cual se carga la asistencia',
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
   CONSTRAINT `fk_personal_Escuelas1` FOREIGN KEY (`IdEscuela`) REFERENCES `escuelas` (`IdEscuela`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla educatec.personal: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.personal: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
 INSERT INTO `personal` (`IdPersonal`, `IdEscuela`, `Apellidos`, `Nombres`, `DNI`) VALUES
 	(1, 1, 'Perez', 'Juan', 12564587),

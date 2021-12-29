@@ -1,4 +1,5 @@
-﻿using educatec.CapaLogica;
+﻿using asistec.CapaLogica;
+using educatec.CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +22,6 @@ namespace educatec.CapaPresentacion
         bool IsEditar = false;
 
         private int IdPersonal;
-        private string Transporte;
-        private string Titular;
-        private string Telefono;
 
         public formNuevoEditarPersonal()
         {
@@ -43,11 +41,11 @@ namespace educatec.CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = LPersonal.InsertarPersonal(this.txtDNI.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
+                        rpta = LPersonal.InsertarPersonal(Convert.ToInt32(this.txtDNI), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
                     }
                     else
                     {
-                        rpta = LPersonal.EditarPersonal(this.IdPersonal,this.txtDNI.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
+                        rpta = LPersonal.EditarPersonal(this.IdPersonal, Convert.ToInt32(this.txtDNI), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
                     }
 
                     if (rpta.Equals("OK"))

@@ -13,7 +13,7 @@ namespace educatec.CapaDatos
         private int _IdPersonal;
         private string _Apellidos;
         private string _Nombres;
-        private string _DNI;
+        private int _DNI;
         private string _Observaciones;
 
         private string _TextoBuscar;
@@ -194,6 +194,66 @@ namespace educatec.CapaDatos
                 conexion.CerrarConexion();
             }
             return rpta;
+
+        }
+
+        public string EliminarPersonal(DPersonal Personal)
+        {
+            string rpta = "";
+            // SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_eliminar_personal";
+
+                MySqlParameter pIdPersonal = new MySqlParameter();
+                pIdPersonal.ParameterName = "@pIdPersonal";
+                pIdPersonal.MySqlDbType = MySqlDbType.Int32;
+                // pIdEmpleado.Size = 60;
+                pIdPersonal.Value = Personal.IdPersonal;
+                comando.Parameters.Add(pIdPersonal);
+
+                //Ejecutamos nuestro comando
+
+                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                //if (conexion. == ConnectionState.Open) 
+                conexion.CerrarConexion();
+            }
+            return rpta;
+        }
+
+        // devuelve solo 1 personal de la BD
+        public DataTable DamePersonal(int IdCliente)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_dame_personal";
+
+            MySqlParameter pIdPersonal = new MySqlParameter();
+            pIdPersonal.ParameterName = "@pIdPersonal";
+            pIdPersonal.MySqlDbType = MySqlDbType.Int32;
+            // pIdProducto.Size = 60;
+            pIdPersonal.Value = IdPersonal;
+            comando.Parameters.Add(pIdPersonal);
+
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+
+            return tabla;
 
         }
 

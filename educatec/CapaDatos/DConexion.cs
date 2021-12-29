@@ -10,7 +10,7 @@ namespace educatec.CapaDatos
 {
     public class DConexion
     {
-        MySqlConnection Con = new MySqlConnection("datasource =localhost;username = root;password = '';database=educatec");
+        MySqlConnection Con = new MySqlConnection("datasource =localhost;username = root;password = '';database=asistec");
 
         public DConexion()
         {

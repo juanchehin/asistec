@@ -46,27 +46,28 @@ namespace asistec.CapaLogica
         }
 
         // Devuelve solo un Cliente
-        public DataTable MostrarCliente(int IdCliente)
+        public DataTable DamePersonal(int IdCliente)
         {
 
             DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarCliente(IdCliente);
+            tabla = objetoCD.DamePersonal(IdCliente);
             Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
             Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
 
-        public static string EditarPersonal(int IdPersonal, string Apellidos, string Nombres, string Observaciones)
+        public static string EditarPersonal(int IdPersonal,int DNI, string Apellidos, string Nombres, string Observaciones)
         {
 
             DPersonal Obj = new DPersonal();
-            Obj.IdCliente = IdCliente;
+            Obj.IdPersonal = IdPersonal;
 
-            Obj.Transporte = Transporte;
-            Obj.Titular = Titular;
-            Obj.Telefono = Telefono;
+            Obj.DNI = DNI;
+            Obj.Apellidos = Apellidos;
+            Obj.Nombres = Nombres;
+            Obj.Observaciones = Observaciones;
 
-            return Obj.Editar(Obj);
+            return Obj.EditarPersonal(Obj);
         }
     }
 }
