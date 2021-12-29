@@ -23,6 +23,29 @@ namespace educatec.CapaLogica
             tablaEscuelas = objetoCD.ListarEscuelas();
             return tablaEscuelas;
         }
+        //Método Insertar que llama al método Insertar de la clase
+        //de la CapaDatos
+        public static string InsertarEscuela(string Escuela, string Observaciones)
+        {
+            // Console.WriteLine("En insertar , nombre es " + nombre);
+            // Console.WriteLine("Escuela en logica es : " + Escuela);
+
+            DEscuelas Obj = new DEscuelas();
+            Obj.Escuela = Escuela;
+            Obj.Observaciones = Observaciones;
+
+            return Obj.InsertarEscuela(Obj);
+        }
+
+        public DataTable DameEscuela(int IdEscuela)
+        {
+
+            DataTable tabla = new DataTable();
+            // tabla = objetoCD.DameEscuela(IdProducto);
+            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
+            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
+            return tabla;
+        }
     }
 
     

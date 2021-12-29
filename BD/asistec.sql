@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.22-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         5.7.31 - MySQL Community Server (GPL)
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             11.3.0.6295
+-- HeidiSQL Versión:             11.2.0.6213
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `asistencias` (
   CONSTRAINT `fk_asistencias_personal` FOREIGN KEY (`IdPersonal`) REFERENCES `personal` (`IdPersonal`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla asistec.asistencias: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.asistencias: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
 INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `HorarioSalida`, `Observacion`, `Estado`) VALUES
 	(1, 1, '2021-12-27 14:01:00', '2021-12-27 18:02:20', '-', NULL),
@@ -76,6 +76,45 @@ SALIR:BEGIN
 		INSERT INTO personal VALUES(pIdPersonal, pIdEscuela,pApellidos,pNombres);
         INSERT INTO asistencias VALUES(pIdAsistencia,pIdPersonal, now(),null, '-');
         
+        SELECT 'OK' AS Mensaje;
+    COMMIT;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento asistec.bsp_alta_escuela
+DELIMITER //
+CREATE PROCEDURE `bsp_alta_escuela`(pEscuela varchar(60),pObservaciones varchar(255))
+SALIR:BEGIN
+	/*
+    Permite dar de alta una escuela controlando que el nombre no exista ya.
+    Devuelve OK o el mensaje de error en Mensaje.
+    */
+	DECLARE pIdEscuela smallint;
+	-- Manejo de error en la transacción
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		-- SHOW ERRORS;
+		SELECT 'Error en la transacción. Contáctese con el administrador.' Mensaje,
+				NULL AS Id;
+		ROLLBACK;
+	END;
+    -- Controla que la escuela sea obligatoria 
+	IF pEscuela = '' OR pEscuela IS NULL THEN
+		SELECT 'Debe proveer un nombre para la escuela' AS Mensaje;
+		LEAVE SALIR;
+    END IF;
+    
+    -- Controla que no exista una escuela con el mismo nombre
+	IF EXISTS(SELECT Escuela FROM Escuelas WHERE Escuela = pEscuela) THEN
+		SELECT 'Ya existe una escuela con ese nombre' AS Mensaje;
+		LEAVE SALIR;
+    END IF;
+    
+	START TRANSACTION;
+		SET pIdEscuela = 1 + (SELECT COALESCE(MAX(IdEscuela),0)
+								FROM Escuelas);
+                                
+		INSERT INTO escuelas VALUES(pIdEscuela, pEscuela, pObservaciones);
         SELECT 'OK' AS Mensaje;
     COMMIT;
 END//
@@ -136,14 +175,20 @@ CREATE TABLE IF NOT EXISTS `escuelas` (
   `Escuela` varchar(255) DEFAULT NULL COMMENT 'Nombre de la escuela',
   `Observaciones` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`IdEscuela`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla asistec.escuelas: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.escuelas: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `escuelas` DISABLE KEYS */;
 INSERT INTO `escuelas` (`IdEscuela`, `Escuela`, `Observaciones`) VALUES
 	(1, 'Escuela Ej 1', '-'),
 	(2, 'Escuela Ej 2', '-'),
-	(3, 'Escuela Ej 3', '-');
+	(3, 'Escuela Ej 3', '-'),
+	(4, '54654', 'sad'),
+	(5, 'sdfs', 'fdsfs'),
+	(6, 'fds', 'dsf'),
+	(7, 'sadas', 'sada'),
+	(8, 'fdg', 'gd'),
+	(9, 'Sarmiento', '456');
 /*!40000 ALTER TABLE `escuelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla asistec.personal

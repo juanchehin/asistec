@@ -56,5 +56,68 @@ namespace educatec.CapaDatos
             return tabla;
 
         }
+        public string InsertarEscuela(DEscuelas Escuela)
+        {
+            string rpta = "";
+            // SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+
+                Console.WriteLine("Escuela es : " + Escuela.Escuela);
+                Console.WriteLine("Observaciones es : " + Escuela.Observaciones);
+
+                //Código
+                /*SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand(); */
+
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_alta_escuela";
+
+                /*SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spinsertar_articulo";
+                SqlCmd.CommandType = CommandType.StoredProcedure; */
+
+
+                MySqlParameter pEscuela= new MySqlParameter();
+                pEscuela.ParameterName = "@pEscuela";
+                pEscuela.MySqlDbType = MySqlDbType.VarChar;
+                pEscuela.Size = 60;
+                pEscuela.Value = Escuela.Escuela;
+                comando.Parameters.Add(pEscuela);
+
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Escuela.Observaciones;
+                comando.Parameters.Add(pObservaciones);
+
+                
+
+                Console.WriteLine("el comando es : " + comando.CommandText);
+                //Ejecutamos nuestro comando
+
+                // ExecuteNonQuery devuelve el numero de filas afectadas
+                // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
+                Console.WriteLine("rpta es : " + rpta);
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return rpta;
+
+        }
     }
 }
