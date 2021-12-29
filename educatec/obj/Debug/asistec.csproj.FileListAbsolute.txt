@@ -1,0 +1,12 @@
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\asistec.csproj.AssemblyReference.cache
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\asistec.csproj.SuggestedBindingRedirects.cache
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formAcercaDe.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formAsistencia.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formAsistencias.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formInicio.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formNuevaEditarEscuela.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formNuevoEditarPersonal.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formPersonal.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\asistec.Properties.Resources.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\asistec.csproj.GenerateResource.cache
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\asistec.csproj.CoreCompileInputs.cache

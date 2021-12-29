@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace educatec.CapaPresentacion
 {
-    public partial class formNuevaEscuela : Form
+    public partial class formNuevaEditarEscuela : Form
     {
-        public formNuevaEscuela()
+        public formNuevaEditarEscuela()
         {
             InitializeComponent();
         }

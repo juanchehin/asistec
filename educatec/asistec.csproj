@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CAA2B2A4-1F3F-4258-A5FC-C5D923C366C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>educatec</RootNamespace>
-    <AssemblyName>educatec</AssemblyName>
+    <RootNamespace>asistec</RootNamespace>
+    <AssemblyName>asistec</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -92,6 +92,7 @@
     <Compile Include="CapaDatos\DAsistencias.cs" />
     <Compile Include="CapaDatos\DConexion.cs" />
     <Compile Include="CapaDatos\DEscuelas.cs" />
+    <Compile Include="CapaDatos\DPersonal.cs" />
     <Compile Include="CapaLogica\LAsistencias.cs" />
     <Compile Include="CapaLogica\LEscuelas.cs" />
     <Compile Include="CapaLogica\LPersonal.cs" />
@@ -119,17 +120,17 @@
     <Compile Include="CapaPresentacion\formInicio.Designer.cs">
       <DependentUpon>formInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\formNuevaEscuela.cs">
+    <Compile Include="CapaPresentacion\formNuevaEditarEscuela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\formNuevaEscuela.Designer.cs">
-      <DependentUpon>formNuevaEscuela.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\formNuevaEditarEscuela.Designer.cs">
+      <DependentUpon>formNuevaEditarEscuela.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapaPresentacion\formNuevoPersonal.cs">
+    <Compile Include="CapaPresentacion\formNuevoEditarPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CapaPresentacion\formNuevoPersonal.Designer.cs">
-      <DependentUpon>formNuevoPersonal.cs</DependentUpon>
+    <Compile Include="CapaPresentacion\formNuevoEditarPersonal.Designer.cs">
+      <DependentUpon>formNuevoEditarPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentacion\formPersonal.cs">
       <SubType>Form</SubType>
@@ -151,11 +152,11 @@
     <EmbeddedResource Include="CapaPresentacion\formInicio.resx">
       <DependentUpon>formInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\formNuevaEscuela.resx">
-      <DependentUpon>formNuevaEscuela.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\formNuevaEditarEscuela.resx">
+      <DependentUpon>formNuevaEditarEscuela.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapaPresentacion\formNuevoPersonal.resx">
-      <DependentUpon>formNuevoPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="CapaPresentacion\formNuevoEditarPersonal.resx">
+      <DependentUpon>formNuevoEditarPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formPersonal.resx">
       <DependentUpon>formPersonal.cs</DependentUpon>

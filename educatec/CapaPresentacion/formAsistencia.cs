@@ -109,8 +109,7 @@ namespace educatec.CapaPresentacion
                 }
                 else
                 {
-                    rpta = LAsistencias.InsertarAsistencia(Convert.ToInt32(txtDNI), this.txtApellidos.Text.Trim(), txtNombres.Text.Trim(),
-                        this.tbObservaciones.Text.Trim(), this.escuela);
+                    rpta = LAsistencias.InsertarAsistencia(Convert.ToInt32(txtDNI),this.tbObservaciones.Text.Trim(), this.escuela);
 
                     if (rpta.Equals("OK"))
                     {
@@ -129,6 +128,13 @@ namespace educatec.CapaPresentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
 
+        }
+
+        private void btnAgregarEscuela_Click(object sender, EventArgs e)
+        {
+            formNuevaEditarEscuela frm = new formNuevaEditarEscuela();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

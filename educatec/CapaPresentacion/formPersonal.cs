@@ -19,7 +19,7 @@ namespace educatec.CapaPresentacion
 
         private void btnNuevoPersonal_Click(object sender, EventArgs e)
         {
-            formNuevoPersonal frm = new formNuevoPersonal();
+            formNuevoEditarPersonal frm = new formNuevoEditarPersonal();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -45,9 +45,9 @@
             this.dataListadoAsistencias.AllowUserToDeleteRows = false;
             this.dataListadoAsistencias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListadoAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoAsistencias.Location = new System.Drawing.Point(148, 38);
+            this.dataListadoAsistencias.Location = new System.Drawing.Point(148, 97);
             this.dataListadoAsistencias.Name = "dataListadoAsistencias";
-            this.dataListadoAsistencias.Size = new System.Drawing.Size(1102, 544);
+            this.dataListadoAsistencias.Size = new System.Drawing.Size(1102, 485);
             this.dataListadoAsistencias.TabIndex = 0;
             // 
             // pictureBox1
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(144, 12);
+            this.label1.Location = new System.Drawing.Point(144, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 20);
             this.label1.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(994, 9);
+            this.lblFecha.Location = new System.Drawing.Point(993, 62);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(57, 18);
             this.lblFecha.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(1051, 9);
+            this.dtpFecha.Location = new System.Drawing.Point(1050, 62);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.lblTotalAsistencias.AutoSize = true;
             this.lblTotalAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAsistencias.Location = new System.Drawing.Point(301, 13);
+            this.lblTotalAsistencias.Location = new System.Drawing.Point(301, 64);
             this.lblTotalAsistencias.Name = "lblTotalAsistencias";
             this.lblTotalAsistencias.Size = new System.Drawing.Size(18, 20);
             this.lblTotalAsistencias.TabIndex = 6;

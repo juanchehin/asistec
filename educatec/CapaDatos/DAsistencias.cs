@@ -20,8 +20,6 @@ namespace educatec.CapaDatos
         private string _Escuela;
 
         private int _DNI;
-        private string _Apellidos;
-        private string _Nombres;
 
         public int IdAsistencia { get => _IdAsistencia; set => _IdAsistencia = value; }
         public int IdPersonal { get => _IdPersonal; set => _IdPersonal = value; }
@@ -31,8 +29,6 @@ namespace educatec.CapaDatos
         public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
 
         public int DNI { get => _DNI; set => _DNI = value; }
-        public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
-        public string Nombres { get => _Nombres; set => _Nombres = value; }
 
         //Constructores
         public DAsistencias()
@@ -50,8 +46,6 @@ namespace educatec.CapaDatos
             this.Escuela = Escuela;
 
             this.DNI = DNI;
-            this.Apellidos =Apellidos;
-            this.Nombres = Nombres;
 
         }
 
@@ -122,7 +116,7 @@ namespace educatec.CapaDatos
                 pDNI.Value = Asistencia.DNI;
                 comando.Parameters.Add(pDNI);
 
-                MySqlParameter pApellidos = new MySqlParameter();
+                /*MySqlParameter pApellidos = new MySqlParameter();
                 pApellidos.ParameterName = "@pApellidos";
                 pApellidos.MySqlDbType = MySqlDbType.VarChar;
                 pApellidos.Size = 60;
@@ -136,7 +130,7 @@ namespace educatec.CapaDatos
                 pNombres.Value = Asistencia.Nombres;
                 comando.Parameters.Add(pNombres);
 
-                /*MySqlParameter pNombres = new MySqlParameter();
+                MySqlParameter pNombres = new MySqlParameter();
                 pNombres.ParameterName = "@pNombres";
                 pNombres.MySqlDbType = MySqlDbType.VarChar;
                 pNombres.Size = 60;
