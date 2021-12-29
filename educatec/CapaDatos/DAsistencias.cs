@@ -17,6 +17,7 @@ namespace educatec.CapaDatos
         private DateTime _HorarioEntrada;
         private DateTime _HorarioSalida;
         private string _Observaciones;
+        private string _Escuela;
 
         private int _DNI;
         private string _Apellidos;
@@ -24,6 +25,7 @@ namespace educatec.CapaDatos
 
         public int IdAsistencia { get => _IdAsistencia; set => _IdAsistencia = value; }
         public int IdPersonal { get => _IdPersonal; set => _IdPersonal = value; }
+        public string Escuela { get => _Escuela; set => _Escuela = value; }
         public DateTime HorarioEntrada { get => _HorarioEntrada; set => _HorarioEntrada = value; }
         public DateTime HorarioSalida { get => _HorarioSalida; set => _HorarioSalida = value; }
         public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
@@ -38,13 +40,14 @@ namespace educatec.CapaDatos
 
         }
 
-        public DAsistencias(int IdAsistencia, int IdPersonal, DateTime HorarioEntrada, DateTime HorarioSalida, string Observaciones,int DNI,string Apellidos,string Nombres)
+        public DAsistencias(int IdAsistencia, int IdPersonal, DateTime HorarioEntrada, DateTime HorarioSalida, string Observaciones,int DNI,string Apellidos,string Nombres,string Escuela)
         {
             this.IdAsistencia = IdAsistencia;
             this.IdPersonal = IdPersonal;
             this.HorarioEntrada = HorarioEntrada;
             this.HorarioSalida = HorarioSalida;
             this.Observaciones = Observaciones;
+            this.Escuela = Escuela;
 
             this.DNI = DNI;
             this.Apellidos =Apellidos;
@@ -132,6 +135,20 @@ namespace educatec.CapaDatos
                 pNombres.Size = 60;
                 pNombres.Value = Asistencia.Nombres;
                 comando.Parameters.Add(pNombres);
+
+                /*MySqlParameter pNombres = new MySqlParameter();
+                pNombres.ParameterName = "@pNombres";
+                pNombres.MySqlDbType = MySqlDbType.VarChar;
+                pNombres.Size = 60;
+                pNombres.Value = Asistencia.Nombres;
+                comando.Parameters.Add(pNombres);
+
+                MySqlParameter pNombres = new MySqlParameter();
+                pNombres.ParameterName = "@pNombres";
+                pNombres.MySqlDbType = MySqlDbType.VarChar;
+                pNombres.Size = 60;
+                pNombres.Value = Asistencia.Nombres;
+                comando.Parameters.Add(pNombres);*/
 
                 Console.WriteLine("rpta es : " + rpta);
 

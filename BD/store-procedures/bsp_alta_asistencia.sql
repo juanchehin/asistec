@@ -1,6 +1,6 @@
 DROP procedure IF EXISTS `bsp_alta_asistencia`;
 DELIMITER $$
-CREATE PROCEDURE `bsp_alta_asistencia`(pDNI INT,pIdEscuela INT,pApellidos VARCHAR(60),pNombres VARCHAR(60))
+CREATE PROCEDURE `bsp_alta_asistencia`(pDNI INT,pIdEscuela INT,pApellidos VARCHAR(60),pNombres VARCHAR(60),pEstado CHAR(1))
 SALIR:BEGIN
 	/*
     Permite dar de alta una persona por su DNI. 
@@ -32,7 +32,7 @@ SALIR:BEGIN
 								FROM asistencias);
                                 
 		INSERT INTO personal VALUES(pIdPersonal, pIdEscuela,pApellidos,pNombres);
-        INSERT INTO asistencias VALUES(pIdAsistencia,pIdPersonal, now(),null, '-');
+        INSERT INTO asistencias VALUES(pIdAsistencia,pIdPersonal, now(),null, '-',pEstado);
         
         SELECT 'OK' AS Mensaje;
     COMMIT;

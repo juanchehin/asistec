@@ -30,5 +30,26 @@ namespace educatec.CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnAgregarPersonal_Click(object sender, EventArgs e)
+        {
+            formNuevoPersonal frm = new formNuevoPersonal();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnListarPersonal_Click(object sender, EventArgs e)
+        {
+            formPersonal frm = new formPersonal();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            formAcercaDe frm = new formAcercaDe();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -95,6 +95,12 @@
     <Compile Include="CapaLogica\LAsistencias.cs" />
     <Compile Include="CapaLogica\LEscuelas.cs" />
     <Compile Include="CapaLogica\LPersonal.cs" />
+    <Compile Include="CapaPresentacion\formAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formAcercaDe.Designer.cs">
+      <DependentUpon>formAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\formAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +119,29 @@
     <Compile Include="CapaPresentacion\formInicio.Designer.cs">
       <DependentUpon>formInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\formNuevaEscuela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formNuevaEscuela.Designer.cs">
+      <DependentUpon>formNuevaEscuela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\formNuevoPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formNuevoPersonal.Designer.cs">
+      <DependentUpon>formNuevoPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentacion\formPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formPersonal.Designer.cs">
+      <DependentUpon>formPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CapaPresentacion\formAcercaDe.resx">
+      <DependentUpon>formAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formAsistencia.resx">
       <DependentUpon>formAsistencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formInicio.resx">
       <DependentUpon>formInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formNuevaEscuela.resx">
+      <DependentUpon>formNuevaEscuela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formNuevoPersonal.resx">
+      <DependentUpon>formNuevoPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formPersonal.resx">
+      <DependentUpon>formPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

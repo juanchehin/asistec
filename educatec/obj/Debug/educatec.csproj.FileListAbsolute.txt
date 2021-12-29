@@ -34,3 +34,7 @@ C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.csp
 C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.csproj.CopyComplete
 C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.exe
 C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.pdb
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formNuevaEscuela.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formNuevoPersonal.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formPersonal.resources
+C:\Users\ciidept\Documents\programacion\educatec\educatec\obj\Debug\educatec.CapaPresentacion.formAcercaDe.resources

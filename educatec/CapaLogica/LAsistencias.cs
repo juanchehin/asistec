@@ -20,7 +20,7 @@ namespace educatec.CapaLogica
             return tabla;
         }
 
-        public static string InsertarAsistencia(int DNI, string Apellidos, string Nombres)
+        public static string InsertarAsistencia(int DNI, string Apellidos, string Nombres,string Observaciones,string Escuela)
         {
             // Console.WriteLine("En insertar , nombre es " + nombre);
 
@@ -28,6 +28,8 @@ namespace educatec.CapaLogica
             Obj.DNI = DNI;
             Obj.Apellidos = Apellidos;
             Obj.Nombres = Nombres;
+            Obj.Observaciones = Observaciones;
+            Obj.Escuela = Escuela;
 
             return Obj.InsertarAsistencia(Obj);
         }

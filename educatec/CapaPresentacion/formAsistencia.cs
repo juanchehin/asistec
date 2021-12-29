@@ -17,6 +17,7 @@ namespace educatec.CapaPresentacion
 
 
         private DataTable escuelas;
+        private string escuela;
 
         public formAsistencia()
         {
@@ -90,10 +91,44 @@ namespace educatec.CapaPresentacion
         {
             escuelas = objetoCL_asistencia.ListarEscuelas();
 
-            cbEscuelas.DataSource = escuelas;
+            cbEscuela.DataSource = escuelas;
 
-            cbEscuelas.DisplayMember = "Escuela";
-            cbEscuelas.ValueMember = "IdEscuela";
+            cbEscuela.DisplayMember = "Escuela";
+            cbEscuela.ValueMember = "IdEscuela";
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.escuela = cbEscuela.Text;
+            try
+            {
+                string rpta = "";
+                if (this.txtDNI.Text == string.Empty)
+                {
+                    MensajeError("El campo DNI es obligatorio");
+                }
+                else
+                {
+                    rpta = LAsistencias.InsertarAsistencia(Convert.ToInt32(txtDNI), this.txtApellidos.Text.Trim(), txtNombres.Text.Trim(),
+                        this.tbObservaciones.Text.Trim(), this.escuela);
+
+                    if (rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Se Insertó de forma correcta el registro");
+                        
+                        // this.Close();
+                    }
+                    else
+                    {
+                        this.MensajeError(rpta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
         }
     }
 }
