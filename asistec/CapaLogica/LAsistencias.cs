@@ -14,20 +14,16 @@ namespace educatec.CapaLogica
 
         public DataTable ListarAsistencias(DateTime pFecha)
         {
-            Console.WriteLine("pFecha en capa logicaa es : " + pFecha);
             DataTable tabla = new DataTable();
             tabla = objetoCD.ListarAsistencias(pFecha);
             return tabla;
         }
 
-        public static string InsertarAsistencia(int DNI,string Observaciones,string Escuela)
+        public static string InsertarAsistencia(int DNI,string Observaciones)
         {
-            // Console.WriteLine("En insertar , nombre es " + nombre);
-
             DAsistencias Obj = new DAsistencias();
             Obj.DNI = DNI;
             Obj.Observaciones = Observaciones;
-            Obj.Escuela = Escuela;
 
             return Obj.InsertarAsistencia(Obj);
         }
