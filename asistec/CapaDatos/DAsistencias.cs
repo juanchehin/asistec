@@ -116,14 +116,14 @@ namespace educatec.CapaDatos
                 pDNI.Value = Asistencia.DNI;
                 comando.Parameters.Add(pDNI);
 
-                /*MySqlParameter pApellidos = new MySqlParameter();
-                pApellidos.ParameterName = "@pApellidos";
-                pApellidos.MySqlDbType = MySqlDbType.VarChar;
-                pApellidos.Size = 60;
-                pApellidos.Value = Asistencia.Apellidos;
-                comando.Parameters.Add(pApellidos);
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 255;
+                pObservaciones.Value = Asistencia.Observaciones;
+                comando.Parameters.Add(pObservaciones);
 
-                MySqlParameter pNombres = new MySqlParameter();
+                /*MySqlParameter pNombres = new MySqlParameter();
                 pNombres.ParameterName = "@pNombres";
                 pNombres.MySqlDbType = MySqlDbType.VarChar;
                 pNombres.Size = 60;
@@ -144,13 +144,13 @@ namespace educatec.CapaDatos
                 pNombres.Value = Asistencia.Nombres;
                 comando.Parameters.Add(pNombres);*/
 
-                Console.WriteLine("rpta es : " + rpta);
+                
 
                 // Console.WriteLine("el comando es : " + comando.CommandText[0]);
                 //Ejecutamos nuestro comando
 
                 // ExecuteNonQuery devuelve el numero de filas afectadas
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se ingreso el Registro";
                 comando.Parameters.Clear();
 
             }

@@ -65,6 +65,8 @@ namespace educatec.CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+            txtDNI.Clear();
+            tbObservaciones.Clear();
         }
 
         //Mostrar Mensaje de Error
@@ -121,22 +123,12 @@ namespace educatec.CapaPresentacion
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }*/
+            
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtDNI.Text, "  ^ [0-9]"))
-            {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                txtDNI.Text = "";
-            }
+            
         }
     }
 }
