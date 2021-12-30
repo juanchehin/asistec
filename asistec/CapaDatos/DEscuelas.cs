@@ -103,7 +103,7 @@ namespace educatec.CapaDatos
                 // ExecuteNonQuery devuelve el numero de filas afectadas
                 // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
-                Console.WriteLine("rpta es : " + rpta);
+                // Console.WriteLine("rpta es : " + rpta);
                 comando.Parameters.Clear();
 
             }

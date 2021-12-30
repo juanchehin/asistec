@@ -1,4 +1,5 @@
 ﻿using asistec.CapaLogica;
+using educatec.CapaDatos;
 using educatec.CapaLogica;
 using System;
 using System.Collections.Generic;
@@ -15,17 +16,21 @@ namespace educatec.CapaPresentacion
     public partial class formNuevoEditarPersonal : Form
     {
         LPersonal objetoCN = new LPersonal();
+        LEscuelas objetoCL_asistencia = new LEscuelas();
+        private DataTable escuelas;
         DataTable respuesta;
         // int parametroActual;
         bool bandera;
-        bool IsNuevo = false;
+        bool IsNuevo = true;
         bool IsEditar = false;
 
         private int IdPersonal;
+        private string Escuela;
 
         public formNuevoEditarPersonal()
         {
             InitializeComponent();
+            cargarEscuelas();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -41,7 +46,7 @@ namespace educatec.CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = LPersonal.InsertarPersonal(Convert.ToInt32(this.txtDNI), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
+                        rpta = LPersonal.InsertarPersonal(Convert.ToInt32(this.txtDNI.Text.Trim()),this.cbEscuela.Text, this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
                     }
                     else
                     {
@@ -72,6 +77,15 @@ namespace educatec.CapaPresentacion
             }
             this.Close();
         }
+        private void cargarEscuelas()
+        {
+            escuelas = objetoCL_asistencia.ListarEscuelas();
+
+            cbEscuela.DataSource = escuelas;
+
+            cbEscuela.DisplayMember = "Escuela";
+            cbEscuela.ValueMember = "IdEscuela";
+        }
         private void MensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,6 +94,11 @@ namespace educatec.CapaPresentacion
         {
             MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace educatec.CapaDatos
     public class DPersonal
     {
         private int _IdPersonal;
+        private string _Escuela;
         private string _Apellidos;
         private string _Nombres;
         private int _DNI;
@@ -20,6 +21,7 @@ namespace educatec.CapaDatos
 
 
         public int IdPersonal { get => _IdPersonal; set => _IdPersonal = value; }
+        public string Escuela { get => _Escuela; set => _Escuela = value; }
         public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
         public string Nombres { get => _Nombres; set => _Nombres = value; }
         public int DNI { get => _DNI; set => _DNI = value; }
@@ -32,9 +34,10 @@ namespace educatec.CapaDatos
 
         }
 
-        public DPersonal(int IdPersonal,int DNI, string Apellidos, string Nombres, string Observaciones)
+        public DPersonal(int IdPersonal, string Escuela, int DNI, string Apellidos, string Nombres, string Observaciones)
         {
             this.IdPersonal = IdPersonal;
+            this.Escuela = Escuela;
             this.DNI = DNI;
             this.Apellidos = Apellidos;
             this.Nombres = Nombres;
@@ -174,14 +177,21 @@ namespace educatec.CapaDatos
                 MySqlParameter pNombres = new MySqlParameter();
                 pNombres.ParameterName = "@pNombres";
                 pNombres.MySqlDbType = MySqlDbType.VarChar;
-                pNombres.Size = 15;
+                pNombres.Size = 60;
                 pNombres.Value = Personal.Nombres;
                 comando.Parameters.Add(pNombres);
+
+                MySqlParameter pEscuela = new MySqlParameter();
+                pEscuela.ParameterName = "@pEscuela";
+                pEscuela.MySqlDbType = MySqlDbType.VarChar;
+                pEscuela.Size = 60;
+                pEscuela.Value = Personal.Escuela;
+                comando.Parameters.Add(pEscuela);
 
                 // Console.WriteLine("el comando es : " + comando.CommandText[0]);
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
 
 
             }

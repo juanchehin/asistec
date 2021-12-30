@@ -218,6 +218,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "formInicio";
             this.Text = "Asistencias - Educatec";
             this.groupBox1.ResumeLayout(false);

@@ -120,6 +120,50 @@ SALIR:BEGIN
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento asistec.bsp_alta_personal
+DELIMITER //
+CREATE PROCEDURE `bsp_alta_personal`(pEscuela varchar(60),pApellidos varchar(60),pNombres varchar(60),pDNI int)
+SALIR:BEGIN
+	/*
+    Permite dar de alta un personal controlando que el DNI no exista ya. 
+    La da de alta al final del orden, con estado A: Activa. 
+    Devuelve OK + Id o el mensaje de error en Mensaje.
+    */
+	DECLARE pIdPersonal smallint;
+    DECLARE pIdEscuela INT;
+	-- Manejo de error en la transacción
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		SHOW ERRORS;
+		SELECT 'Error en la transacción. Contáctese con el administrador.' Mensaje;
+		ROLLBACK;
+	END;
+    
+    -- Controla que la DNI sea obligatoria 
+	IF pDNI = '' OR pDNI IS NULL THEN
+		SELECT 'Debe proveer un DNI' AS Mensaje, NULL AS Id;
+		LEAVE SALIR;
+    END IF;
+    -- Controla que no exista DNI con el mismo numero
+	IF EXISTS(SELECT DNI FROM Personal WHERE DNI = pDNI) THEN
+		SELECT 'Ya existe un DNI con ese numero' AS Mensaje;
+		LEAVE SALIR;
+    END IF;
+    
+    -- Obtengo el id de la escuela seleccionada
+    SET pIdEscuela = (SELECT IdEscuela FROM Escuelas WHERE Escuela = pEscuela);
+    
+	START TRANSACTION;
+		SET pIdPersonal = 1 + (SELECT COALESCE(MAX(IdPersonal),0)
+								FROM Personal);
+                                
+		INSERT INTO personal VALUES(pIdPersonal, pIdEscuela,pApellidos,pNombres,pDNI);
+        
+        SELECT 'OK' AS Mensaje;
+    COMMIT;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento asistec.bsp_dame_asistencias_por_dia
 DELIMITER //
 CREATE PROCEDURE `bsp_dame_asistencias_por_dia`(pFecha date)
@@ -201,14 +245,17 @@ CREATE TABLE IF NOT EXISTS `personal` (
   PRIMARY KEY (`IdPersonal`),
   KEY `fk_personal_Escuelas1_idx` (`IdEscuela`),
   CONSTRAINT `fk_personal_Escuelas1` FOREIGN KEY (`IdEscuela`) REFERENCES `escuelas` (`IdEscuela`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla asistec.personal: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.personal: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
 INSERT INTO `personal` (`IdPersonal`, `IdEscuela`, `Apellidos`, `Nombres`, `DNI`) VALUES
 	(1, 1, 'Perez', 'Juan', 12564587),
 	(2, 1, 'Gomez', 'Roberto', 3698456),
-	(3, 3, 'Ruiz', 'Federico', 36541578);
+	(3, 3, 'Ruiz', 'Federico', 36541578),
+	(4, 2, 'sada', 'sadas', 123),
+	(5, 3, 'Sosa', 'JOse', 4564654),
+	(6, 3, 'Gothia', 'Facundo', 56456789);
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

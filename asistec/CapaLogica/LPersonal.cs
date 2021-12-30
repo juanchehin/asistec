@@ -13,17 +13,18 @@ namespace asistec.CapaLogica
         private DPersonal objetoCD = new DPersonal();
 
         public int IdPersonal { get; set; }
-        public int IdEscuela { get; set; }
+        public string Escuela { get; set; }
         public string Apellidos { get; set; }
         public string Nombres { get; set; }
         public int DNI { get; set; }
 
-        public static string InsertarPersonal(int DNI,string Apellidos, string Nombres, string Observaciones)
+        public static string InsertarPersonal(int DNI,string Escuela,string Apellidos, string Nombres, string Observaciones)
         {
             // Console.WriteLine("En insertar , nombre es " + nombre);
 
             DPersonal Obj = new DPersonal();
             Obj.DNI = DNI;
+            Obj.Escuela = Escuela;
             Obj.Apellidos = Apellidos;
             Obj.Nombres = Nombres;
             Obj.Observaciones = Observaciones;
