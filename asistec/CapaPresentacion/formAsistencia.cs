@@ -22,7 +22,6 @@ namespace educatec.CapaPresentacion
         public formAsistencia()
         {
             InitializeComponent();
-            cargarEscuelas();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -87,19 +86,10 @@ namespace educatec.CapaPresentacion
 
         }
 
-        private void cargarEscuelas()
-        {
-            escuelas = objetoCL_asistencia.ListarEscuelas();
-
-            cbEscuela.DataSource = escuelas;
-
-            cbEscuela.DisplayMember = "Escuela";
-            cbEscuela.ValueMember = "IdEscuela";
-        }
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            this.escuela = cbEscuela.Text;
+        {;
             try
             {
                 string rpta = "";
@@ -135,6 +125,16 @@ namespace educatec.CapaPresentacion
             formNuevaEditarEscuela frm = new formNuevaEditarEscuela();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
