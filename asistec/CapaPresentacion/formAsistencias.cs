@@ -26,12 +26,15 @@ namespace educatec.CapaPresentacion
 
         public void ListarAsistencias(DateTime Fecha)
         {
-            // Message.Show("Educatec" + dtpFecha);
-            // Console.WriteLine("dtpFecha en capa negocio es : " + dtpFecha.Value.Date);
-
             dataListadoAsistencias.DataSource = objetoCL.ListarAsistencias(dtpFecha.Value.Date);
             dataListadoAsistencias.Columns[0].Visible = false;
             lblTotalAsistencias.Text = Convert.ToString(dataListadoAsistencias.Rows.Count);
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("dtpFecha.Value.Date " + dtpFecha.Value.Date);
+            ListarAsistencias(dtpFecha.Value.Date);
         }
     }
 }
