@@ -32,7 +32,7 @@
             this.dataListadoPersonal = new System.Windows.Forms.DataGridView();
             this.btnNuevoPersonal = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotalPersonal = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -40,15 +40,19 @@
             // 
             // dataListadoPersonal
             // 
+            this.dataListadoPersonal.AllowUserToAddRows = false;
+            this.dataListadoPersonal.AllowUserToDeleteRows = false;
+            this.dataListadoPersonal.AllowUserToResizeColumns = false;
+            this.dataListadoPersonal.AllowUserToResizeRows = false;
             this.dataListadoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoPersonal.Location = new System.Drawing.Point(172, 99);
+            this.dataListadoPersonal.Location = new System.Drawing.Point(118, 44);
             this.dataListadoPersonal.Name = "dataListadoPersonal";
-            this.dataListadoPersonal.Size = new System.Drawing.Size(860, 500);
+            this.dataListadoPersonal.Size = new System.Drawing.Size(570, 536);
             this.dataListadoPersonal.TabIndex = 2;
             // 
             // btnNuevoPersonal
             // 
-            this.btnNuevoPersonal.Location = new System.Drawing.Point(871, 70);
+            this.btnNuevoPersonal.Location = new System.Drawing.Point(515, 15);
             this.btnNuevoPersonal.Name = "btnNuevoPersonal";
             this.btnNuevoPersonal.Size = new System.Drawing.Size(161, 23);
             this.btnNuevoPersonal.TabIndex = 3;
@@ -59,22 +63,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 67);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(114, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 26);
+            this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Total del personal : ";
             // 
-            // label2
+            // lblTotalPersonal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(365, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 26);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "0";
+            this.lblTotalPersonal.AutoSize = true;
+            this.lblTotalPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPersonal.Location = new System.Drawing.Point(256, 15);
+            this.lblTotalPersonal.Name = "lblTotalPersonal";
+            this.lblTotalPersonal.Size = new System.Drawing.Size(18, 20);
+            this.lblTotalPersonal.TabIndex = 5;
+            this.lblTotalPersonal.Text = "0";
             // 
             // pictureBox1
             // 
@@ -90,8 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 611);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(711, 592);
+            this.Controls.Add(this.lblTotalPersonal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNuevoPersonal);
             this.Controls.Add(this.dataListadoPersonal);
@@ -112,6 +116,6 @@
         private System.Windows.Forms.DataGridView dataListadoPersonal;
         private System.Windows.Forms.Button btnNuevoPersonal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTotalPersonal;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using asistec.CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace educatec.CapaPresentacion
 {
     public partial class formPersonal : Form
     {
+        LPersonal objetoCL = new LPersonal();
         public formPersonal()
         {
             InitializeComponent();
+            ListarPersonal();
         }
 
         private void btnNuevoPersonal_Click(object sender, EventArgs e)
@@ -22,6 +25,12 @@ namespace educatec.CapaPresentacion
             formNuevoEditarPersonal frm = new formNuevoEditarPersonal();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+        public void ListarPersonal()
+        {
+            dataListadoPersonal.DataSource = objetoCL.ListarPersonal();
+            dataListadoPersonal.Columns[0].Visible = false;
+            lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
         }
     }
 }

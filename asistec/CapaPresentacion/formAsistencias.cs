@@ -33,7 +33,6 @@ namespace educatec.CapaPresentacion
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("dtpFecha.Value.Date " + dtpFecha.Value.Date);
             ListarAsistencias(dtpFecha.Value.Date);
         }
     }

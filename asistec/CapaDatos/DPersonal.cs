@@ -56,7 +56,7 @@ namespace educatec.CapaDatos
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_personal";
+            comando.CommandText = "bsp_listar_personal";
 
             tabla.Clear();
             leer = comando.ExecuteReader();
