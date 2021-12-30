@@ -14,13 +14,17 @@ namespace educatec.CapaPresentacion
     public partial class formAsistencias : Form
     {
         LAsistencias objetoCL = new LAsistencias();
+        private DateTime Fecha = DateTime.Today; // Fecha actual
+
         public formAsistencias()
         {
             InitializeComponent();
-            ListarAsistencias();
+            ListarAsistencias(DateTime.Today);
+            this.Fecha = dtpFecha.Value;
+            ListarAsistencias(this.Fecha);
         }
 
-        public void ListarAsistencias()
+        public void ListarAsistencias(DateTime Fecha)
         {
             // Message.Show("Educatec" + dtpFecha);
             // Console.WriteLine("dtpFecha en capa negocio es : " + dtpFecha.Value.Date);

@@ -15,8 +15,6 @@ namespace educatec.CapaPresentacion
     public partial class formAsistencia : Form
     {
         LEscuelas objetoCL_asistencia = new LEscuelas();
-
-
         private DataTable escuelas;
         private string escuela;
 
@@ -78,9 +76,7 @@ namespace educatec.CapaPresentacion
         {
             MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }
-
-        
+        }      
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
