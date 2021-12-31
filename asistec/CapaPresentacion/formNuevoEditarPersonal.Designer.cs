@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevoEditarPersonal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbEscuela = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbEscuela = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +66,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // cbEscuela
+            // 
+            this.cbEscuela.FormattingEnabled = true;
+            this.cbEscuela.Location = new System.Drawing.Point(120, 151);
+            this.cbEscuela.Name = "cbEscuela";
+            this.cbEscuela.Size = new System.Drawing.Size(300, 21);
+            this.cbEscuela.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Escuela : ";
+            // 
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(120, 27);
+            this.txtDNI.MaxLength = 10;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(206, 20);
             this.txtDNI.TabIndex = 1;
@@ -160,23 +178,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Escuela : ";
-            // 
-            // cbEscuela
-            // 
-            this.cbEscuela.FormattingEnabled = true;
-            this.cbEscuela.Location = new System.Drawing.Point(120, 151);
-            this.cbEscuela.Name = "cbEscuela";
-            this.cbEscuela.Size = new System.Drawing.Size(300, 21);
-            this.cbEscuela.TabIndex = 6;
             // 
             // formNuevoEditarPersonal
             // 

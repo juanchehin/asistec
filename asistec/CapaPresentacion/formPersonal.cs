@@ -32,5 +32,10 @@ namespace educatec.CapaPresentacion
             dataListadoPersonal.Columns[0].Visible = false;
             lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ListarPersonal();
+        }
     }
 }

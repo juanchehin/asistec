@@ -161,7 +161,7 @@ namespace educatec.CapaDatos
                 MySqlParameter pDNI = new MySqlParameter();
                 pDNI.ParameterName = "@pDNI";
                 pDNI.MySqlDbType = MySqlDbType.Int32;
-                pDNI.Size = 60;
+                pDNI.Size = 11;
                 pDNI.Value = Personal.DNI;
                 comando.Parameters.Add(pDNI);
 
@@ -189,11 +189,10 @@ namespace educatec.CapaDatos
                 comando.Parameters.Add(pEscuela);
 
                 // Console.WriteLine("el comando es : " + comando.CommandText[0]);
-                //Ejecutamos nuestro comando
+                // Ejecutamos nuestro comando
 
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
-
-
+                // Console.WriteLine("el rpta es : " + rpta);
             }
             catch (Exception ex)
             {

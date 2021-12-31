@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalPersonal = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,16 +46,16 @@
             this.dataListadoPersonal.AllowUserToResizeColumns = false;
             this.dataListadoPersonal.AllowUserToResizeRows = false;
             this.dataListadoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoPersonal.Location = new System.Drawing.Point(118, 44);
+            this.dataListadoPersonal.Location = new System.Drawing.Point(118, 63);
             this.dataListadoPersonal.Name = "dataListadoPersonal";
-            this.dataListadoPersonal.Size = new System.Drawing.Size(570, 536);
+            this.dataListadoPersonal.Size = new System.Drawing.Size(570, 517);
             this.dataListadoPersonal.TabIndex = 2;
             // 
             // btnNuevoPersonal
             // 
-            this.btnNuevoPersonal.Location = new System.Drawing.Point(515, 15);
+            this.btnNuevoPersonal.Location = new System.Drawing.Point(479, 21);
             this.btnNuevoPersonal.Name = "btnNuevoPersonal";
-            this.btnNuevoPersonal.Size = new System.Drawing.Size(161, 23);
+            this.btnNuevoPersonal.Size = new System.Drawing.Size(161, 36);
             this.btnNuevoPersonal.TabIndex = 3;
             this.btnNuevoPersonal.Text = "Agregar personal";
             this.btnNuevoPersonal.UseVisualStyleBackColor = true;
@@ -64,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(114, 15);
+            this.label1.Location = new System.Drawing.Point(118, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 4;
@@ -74,7 +75,7 @@
             // 
             this.lblTotalPersonal.AutoSize = true;
             this.lblTotalPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPersonal.Location = new System.Drawing.Point(256, 15);
+            this.lblTotalPersonal.Location = new System.Drawing.Point(260, 37);
             this.lblTotalPersonal.Name = "lblTotalPersonal";
             this.lblTotalPersonal.Size = new System.Drawing.Size(18, 20);
             this.lblTotalPersonal.TabIndex = 5;
@@ -90,11 +91,22 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.Location = new System.Drawing.Point(646, 21);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(42, 36);
+            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // formPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 592);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lblTotalPersonal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNuevoPersonal);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button btnNuevoPersonal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalPersonal;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

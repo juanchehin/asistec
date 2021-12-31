@@ -20,7 +20,7 @@ namespace asistec.CapaLogica
 
         public static string InsertarPersonal(int DNI,string Escuela,string Apellidos, string Nombres, string Observaciones)
         {
-            // Console.WriteLine("En insertar , nombre es " + nombre);
+            Console.WriteLine("En InsertarPersonal " + DNI);
 
             DPersonal Obj = new DPersonal();
             Obj.DNI = DNI;

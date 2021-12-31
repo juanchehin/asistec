@@ -68,7 +68,6 @@ namespace educatec.CapaPresentacion
                     {
                         this.MensajeError(rpta);
                     }
-
                 }
             }
             catch (Exception ex)

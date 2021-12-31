@@ -30,12 +30,11 @@ SALIR:BEGIN
     
     -- Obtengo el id de la escuela seleccionada
     SET pIdEscuela = (SELECT IdEscuela FROM Escuelas WHERE Escuela = pEscuela);
-    
 	START TRANSACTION;
 		SET pIdPersonal = 1 + (SELECT COALESCE(MAX(IdPersonal),0)
 								FROM Personal);
                                 
-		INSERT INTO personal VALUES(pIdPersonal, pIdEscuela,pApellidos,pNombres,pDNI);
+		INSERT INTO personal VALUES(pIdPersonal,pIdEscuela,pApellidos,pNombres,pDNI,null);
         
         SELECT 'OK' AS Mensaje;
     COMMIT;
