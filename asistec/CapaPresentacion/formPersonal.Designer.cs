@@ -35,6 +35,7 @@
             this.lblTotalPersonal = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnMarcarAsistencia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             this.dataListadoPersonal.Name = "dataListadoPersonal";
             this.dataListadoPersonal.Size = new System.Drawing.Size(570, 517);
             this.dataListadoPersonal.TabIndex = 2;
+            this.dataListadoPersonal.SelectionChanged += new System.EventHandler(this.dataListadoPersonal_SelectionChanged);
             // 
             // btnNuevoPersonal
             // 
@@ -101,11 +103,22 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnMarcarAsistencia
+            // 
+            this.btnMarcarAsistencia.Location = new System.Drawing.Point(312, 21);
+            this.btnMarcarAsistencia.Name = "btnMarcarAsistencia";
+            this.btnMarcarAsistencia.Size = new System.Drawing.Size(161, 36);
+            this.btnMarcarAsistencia.TabIndex = 7;
+            this.btnMarcarAsistencia.Text = "Marcar asistencia";
+            this.btnMarcarAsistencia.UseVisualStyleBackColor = true;
+            this.btnMarcarAsistencia.Click += new System.EventHandler(this.btnMarcarAsistencia_Click);
+            // 
             // formPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 592);
+            this.Controls.Add(this.btnMarcarAsistencia);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lblTotalPersonal);
             this.Controls.Add(this.label1);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalPersonal;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnMarcarAsistencia;
     }
 }

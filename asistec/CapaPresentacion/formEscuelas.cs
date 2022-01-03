@@ -62,7 +62,6 @@ namespace asistec.CapaPresentacion
                     {
                         this.MensajeError(rpta);
                     }
-                    
                     this.ListarEscuelas();
                 }
 

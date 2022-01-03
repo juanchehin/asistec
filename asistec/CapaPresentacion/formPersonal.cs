@@ -1,4 +1,5 @@
 ﻿using asistec.CapaLogica;
+using educatec.CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace educatec.CapaPresentacion
     public partial class formPersonal : Form
     {
         LPersonal objetoCL = new LPersonal();
+        int DNI;
+        string rpta;
         public formPersonal()
         {
             InitializeComponent();
@@ -36,6 +39,48 @@ namespace educatec.CapaPresentacion
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             ListarPersonal();
+        }
+
+        private void dataListadoPersonal_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataListadoPersonal.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataListadoPersonal.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataListadoPersonal.Rows[selectedrowindex];
+                this.DNI = Convert.ToInt32(selectedRow.Cells["DNI"].Value);
+            }
+        }
+
+        private void btnMarcarAsistencia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                    rpta = LAsistencias.InsertarAsistencia(Convert.ToInt32(this.DNI), "-");
+
+                    if (rpta.Equals("OK"))
+                    {
+                        this.MensajeOk("Asistencia marcada");
+                    }
+                    else
+                    {
+                        this.MensajeError(rpta);
+                    }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

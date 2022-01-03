@@ -49,34 +49,21 @@ namespace educatec.CapaDatos
             tabla.Clear();
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            // conexion.CerrarConexion();
             return tabla;
 
         }
         public string InsertarEscuela(DEscuelas Escuela)
         {
             string rpta = "";
-            // SqlConnection SqlCon = new SqlConnection();
             try
             {
 
                 Console.WriteLine("Escuela es : " + Escuela.Escuela);
                 Console.WriteLine("Observaciones es : " + Escuela.Observaciones);
 
-                //Código
-                /*SqlCon.ConnectionString = Conexion.Cn;
-                SqlCon.Open();
-                //Establecer el Comando
-                SqlCommand SqlCmd = new SqlCommand(); */
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_escuela";
-
-                /*SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spinsertar_articulo";
-                SqlCmd.CommandType = CommandType.StoredProcedure; */
-
 
                 MySqlParameter pEscuela= new MySqlParameter();
                 pEscuela.ParameterName = "@pEscuela";
@@ -97,10 +84,7 @@ namespace educatec.CapaDatos
                 Console.WriteLine("el comando es : " + comando.CommandText);
                 //Ejecutamos nuestro comando
 
-                // ExecuteNonQuery devuelve el numero de filas afectadas
-                // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
-                // Console.WriteLine("rpta es : " + rpta);
                 comando.Parameters.Clear();
 
             }
@@ -142,9 +126,6 @@ namespace educatec.CapaDatos
                 {
                     rpta = comando.ExecuteScalar().ToString();
                 }
-                // rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se elimino el Registro";
-
-                // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
 
             }
             catch (Exception ex)
