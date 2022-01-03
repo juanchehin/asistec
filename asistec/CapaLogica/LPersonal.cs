@@ -70,5 +70,14 @@ namespace asistec.CapaLogica
 
             return Obj.EditarPersonal(Obj);
         }
+
+        public DataTable BuscarPersonal(int DNI)
+        {
+            Console.WriteLine("DNI en capa negocio es : " + DNI);
+            DPersonal Obj = new DPersonal();
+            // Obj.TextoBuscar = textobuscar;
+
+            return Obj.BuscarPersonal(DNI);
+        }
     }
 }

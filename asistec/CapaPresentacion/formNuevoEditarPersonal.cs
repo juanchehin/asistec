@@ -99,5 +99,12 @@ namespace educatec.CapaPresentacion
         {
             this.Close();
         }
+
+        private void btnAgregarEscuela_Click(object sender, EventArgs e)
+        {
+            formNuevaEditarEscuela frm = new formNuevaEditarEscuela();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -66,20 +66,19 @@ namespace educatec.CapaDatos
 
         }
 
-        // devuelve solo 1 cliente de la BD
-        public DataTable BuscarPersonal(int IdCliente)
+        public DataTable BuscarPersonal(int DNI)
         {
-            Console.WriteLine("IdCliente en capa datos es : " + IdCliente);
+            Console.WriteLine("DNI en capa datos es : " + DNI);
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "bsp_dame_personal";
+            comando.CommandText = "bsp_buscar_personal";
 
-            MySqlParameter pIdPersonal = new MySqlParameter();
-            pIdPersonal.ParameterName = "@pIdPersonal";
-            pIdPersonal.MySqlDbType = MySqlDbType.Int32;
+            MySqlParameter pDNI = new MySqlParameter();
+            pDNI.ParameterName = "@pDNI";
+            pDNI.MySqlDbType = MySqlDbType.Int32;
             // pIdProducto.Size = 60;
-            pIdPersonal.Value = IdPersonal;
-            comando.Parameters.Add(pIdPersonal);
+            pDNI.Value = DNI;
+            comando.Parameters.Add(pDNI);
 
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -265,6 +264,5 @@ namespace educatec.CapaDatos
             return tabla;
 
         }
-
     }
 }

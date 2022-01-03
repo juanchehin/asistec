@@ -43,12 +43,14 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAgregarEscuela = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAgregarEscuela);
             this.groupBox1.Controls.Add(this.cbEscuela);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtDNI);
@@ -61,7 +63,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 311);
+            this.groupBox1.Size = new System.Drawing.Size(540, 311);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -179,11 +181,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAgregarEscuela
+            // 
+            this.btnAgregarEscuela.Location = new System.Drawing.Point(426, 149);
+            this.btnAgregarEscuela.Name = "btnAgregarEscuela";
+            this.btnAgregarEscuela.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarEscuela.TabIndex = 7;
+            this.btnAgregarEscuela.Text = "Agregar escuela";
+            this.btnAgregarEscuela.UseVisualStyleBackColor = true;
+            this.btnAgregarEscuela.Click += new System.EventHandler(this.btnAgregarEscuela_Click);
+            // 
             // formNuevoEditarPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 452);
+            this.ClientSize = new System.Drawing.Size(564, 452);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pictureBox1);
@@ -214,5 +226,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbEscuela;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAgregarEscuela;
     }
 }

@@ -39,6 +39,7 @@ namespace educatec.CapaPresentacion
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             ListarPersonal();
+            this.txtDNI.Clear();
         }
 
         private void dataListadoPersonal_SelectionChanged(object sender, EventArgs e)
@@ -81,6 +82,26 @@ namespace educatec.CapaPresentacion
         {
             MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.BuscarPersonal();
+        }
+        private void BuscarPersonal()
+        {
+            Console.WriteLine("this.txtBuscar.Text es " + this.txtDNI.Text);
+            this.dataListadoPersonal.DataSource = objetoCL.BuscarPersonal(Convert.ToInt32(this.txtDNI.Text));
+            // this.OcultarColumnas();
+            lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                this.BuscarPersonal();
+            }
         }
     }
 }
