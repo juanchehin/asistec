@@ -133,3 +133,7 @@ C:\Users\ciidept\Documents\programacion\asistec\asistec\bin\Debug\System.Memory.
 C:\Users\ciidept\Documents\programacion\asistec\asistec\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ciidept\Documents\programacion\asistec\asistec\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ciidept\Documents\programacion\asistec\asistec\obj\Debug\asistec.csproj.CopyComplete
+C:\Programacion\asistec\asistec\bin\Debug\asistec.exe.manifest
+C:\Programacion\asistec\asistec\bin\Debug\asistec.application
+C:\Programacion\asistec\asistec\obj\Debug\asistec.exe.manifest
+C:\Programacion\asistec\asistec\obj\Debug\asistec.application

@@ -63,16 +63,6 @@ namespace asistec.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap educatec {
-            get {
-                object obj = ResourceManager.GetObject("educatec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap nueva_asistencia {
             get {
                 object obj = ResourceManager.GetObject("nueva-asistencia", resourceCulture);
