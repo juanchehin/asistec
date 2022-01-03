@@ -38,9 +38,6 @@ namespace educatec.CapaDatos
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
 
-        // ==================================================
-        //  Permite devolver todos las escuelas de la BD
-        // ==================================================
         public DataTable ListarEscuelas()
         {
 
@@ -118,6 +115,49 @@ namespace educatec.CapaDatos
 
             return rpta;
 
+        }
+        public string EliminarEscuela(int IdEscuela)
+        {
+            string rpta = "";
+            try
+            {
+                Console.WriteLine("El Escuela es " + IdEscuela);
+
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "bsp_eliminar_escuela";
+
+                MySqlParameter pIdEscuela = new MySqlParameter();
+                pIdEscuela.ParameterName = "@pIdEscuela";
+                pIdEscuela.MySqlDbType = MySqlDbType.Int32;
+                pIdEscuela.Value = IdEscuela;
+                comando.Parameters.Add(pIdEscuela);
+
+                //Ejecutamos nuestro comando
+                if(comando.ExecuteScalar().ToString() == "OK")
+                {
+                    rpta = "OK";
+                }
+                else
+                {
+                    rpta = comando.ExecuteScalar().ToString();
+                }
+                // rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se elimino el Registro";
+
+                // rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                //if (conexion. == ConnectionState.Open) 
+                conexion.CerrarConexion();
+            }
+            comando.Parameters.Clear();
+            return rpta;
         }
     }
 }

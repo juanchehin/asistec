@@ -46,6 +46,14 @@ namespace educatec.CapaLogica
             Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
+        public static string EliminarEscuela(int IdEscuela)
+        {
+            
+            DEscuelas Obj = new DEscuelas();
+            // Obj.IdEscuela = IdEscuela;
+            // Console.WriteLine("Obj en capa negocio es : " + Obj.EliminarEscuela(IdEscuela));
+            return Obj.EliminarEscuela(IdEscuela);
+        }
     }
 
     

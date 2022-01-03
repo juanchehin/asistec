@@ -60,6 +60,7 @@
             this.dataListadoEscuelas.Name = "dataListadoEscuelas";
             this.dataListadoEscuelas.Size = new System.Drawing.Size(438, 334);
             this.dataListadoEscuelas.TabIndex = 2;
+            this.dataListadoEscuelas.SelectionChanged += new System.EventHandler(this.dataListadoEscuelas_SelectionChanged);
             // 
             // label1
             // 
@@ -97,14 +98,15 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(484, 70);
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.Location = new System.Drawing.Point(521, 60);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(38, 32);
             this.btnActualizar.TabIndex = 7;
-            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
