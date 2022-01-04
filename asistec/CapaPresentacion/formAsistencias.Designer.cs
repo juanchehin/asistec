@@ -35,6 +35,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTotalAsistencias = new System.Windows.Forms.Label();
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoAsistencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,11 +99,22 @@
             this.lblTotalAsistencias.TabIndex = 6;
             this.lblTotalAsistencias.Text = "0";
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(938, 59);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(49, 30);
+            this.btnExcel.TabIndex = 7;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // formAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 594);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.lblTotalAsistencias);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblTotalAsistencias;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

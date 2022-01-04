@@ -137,3 +137,10 @@ C:\Programacion\asistec\asistec\bin\Debug\asistec.exe.manifest
 C:\Programacion\asistec\asistec\bin\Debug\asistec.application
 C:\Programacion\asistec\asistec\obj\Debug\asistec.exe.manifest
 C:\Programacion\asistec\asistec\obj\Debug\asistec.application
+C:\Programacion\asistec\asistec\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Programacion\asistec\asistec\bin\Debug\SpreadsheetLight.dll
+C:\Programacion\asistec\asistec\bin\Debug\System.Drawing.Common.dll
+C:\Programacion\asistec\asistec\bin\Debug\System.IO.Packaging.dll
+C:\Programacion\asistec\asistec\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Programacion\asistec\asistec\bin\Debug\SpreadsheetLight.xml
+C:\Programacion\asistec\asistec\bin\Debug\System.IO.Packaging.xml
