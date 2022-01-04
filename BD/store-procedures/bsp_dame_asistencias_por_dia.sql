@@ -21,7 +21,7 @@ SALIR:BEGIN
     END IF;
 	
 	START TRANSACTION;
-		SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela,DATE_FORMAT(a.HorarioEntrada,'%H:%i') as HorarioEntrada,DATE_FORMAT(a.HorarioSalida,'%H:%i') as HorarioSalida
+		SELECT		p.DNI,p.Apellidos,p.Nombres,e.Escuela,DATE_FORMAT(a.HorarioEntrada,'%H:%i') as HorarioEntrada,DATE_FORMAT(a.HorarioSalida,'%H:%i') as HorarioSalida,TIMEDIFF(a.HorarioSalida,a.HorarioEntrada ) as HorasTrabajadas
 		FROM		asistencias a 
 					LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
 					LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela

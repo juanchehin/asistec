@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="asistec.exe" size="1389544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="asistec.exe" size="1390056">
       <assemblyIdentity name="asistec" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fkizakOmrKPvsadnl5FxKZoi/2S+gz+uqoooZwbR3hY=</dsig:DigestValue>
+        <dsig:DigestValue>i+nYBjskOS4paFlJ2BKufEwBsslxi6CcENN+mKrYCyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

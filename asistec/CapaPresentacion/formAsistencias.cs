@@ -50,6 +50,7 @@ namespace educatec.CapaPresentacion
             sl.SetCellValue(1, 4, "Escuela");
             sl.SetCellValue(1, 5, "HorarioEntrada");
             sl.SetCellValue(1, 6, "HorarioSalida");
+            sl.SetCellValue(1, 7, "HorasTrabajadas");
 
             sl.SetCellStyle(1,1,style);
             sl.SetCellStyle(1, 2, style);
@@ -57,6 +58,7 @@ namespace educatec.CapaPresentacion
             sl.SetCellStyle(1, 4, style);
             sl.SetCellStyle(1, 5, style);
             sl.SetCellStyle(1, 6, style);
+            sl.SetCellStyle(1, 7, style);
 
             int fila = 0;
 
@@ -68,6 +70,7 @@ namespace educatec.CapaPresentacion
                 sl.SetCellValue(i, 4, dataListadoAsistencias.Rows[fila].Cells["Escuela"].Value.ToString());
                 sl.SetCellValue(i, 5, dataListadoAsistencias.Rows[fila].Cells["HorarioEntrada"].Value.ToString());
                 sl.SetCellValue(i, 6, dataListadoAsistencias.Rows[fila].Cells["HorarioSalida"].Value.ToString());
+                sl.SetCellValue(i, 7, dataListadoAsistencias.Rows[fila].Cells["HorasTrabajadas"].Value.ToString());
 
                 fila++;
             }
