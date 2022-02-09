@@ -190,8 +190,7 @@ namespace educatec.CapaDatos
                 // Console.WriteLine("el comando es : " + comando.CommandText[0]);
                 // Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
-                // Console.WriteLine("el rpta es : " + rpta);
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se inserto el Registro";
             }
             catch (Exception ex)
             {
