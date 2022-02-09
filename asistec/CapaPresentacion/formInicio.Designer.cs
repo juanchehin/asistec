@@ -85,7 +85,7 @@
             this.btnAgregarEscuela.Location = new System.Drawing.Point(247, 222);
             this.btnAgregarEscuela.Name = "btnAgregarEscuela";
             this.btnAgregarEscuela.Size = new System.Drawing.Size(173, 157);
-            this.btnAgregarEscuela.TabIndex = 11;
+            this.btnAgregarEscuela.TabIndex = 6;
             this.btnAgregarEscuela.UseVisualStyleBackColor = true;
             this.btnAgregarEscuela.Click += new System.EventHandler(this.btnAgregarEscuela_Click);
             // 
@@ -105,7 +105,7 @@
             this.btnListarEscuelas.Location = new System.Drawing.Point(6, 222);
             this.btnListarEscuelas.Name = "btnListarEscuelas";
             this.btnListarEscuelas.Size = new System.Drawing.Size(173, 157);
-            this.btnListarEscuelas.TabIndex = 9;
+            this.btnListarEscuelas.TabIndex = 5;
             this.btnListarEscuelas.UseVisualStyleBackColor = true;
             this.btnListarEscuelas.Click += new System.EventHandler(this.btnListarEscuelas_Click);
             // 
@@ -125,7 +125,7 @@
             this.btnAgregarPersonal.Location = new System.Drawing.Point(634, 19);
             this.btnAgregarPersonal.Name = "btnAgregarPersonal";
             this.btnAgregarPersonal.Size = new System.Drawing.Size(173, 157);
-            this.btnAgregarPersonal.TabIndex = 7;
+            this.btnAgregarPersonal.TabIndex = 4;
             this.btnAgregarPersonal.UseVisualStyleBackColor = true;
             this.btnAgregarPersonal.Click += new System.EventHandler(this.btnAgregarPersonal_Click);
             // 
@@ -145,7 +145,7 @@
             this.btnListarPersonal.Location = new System.Drawing.Point(442, 19);
             this.btnListarPersonal.Name = "btnListarPersonal";
             this.btnListarPersonal.Size = new System.Drawing.Size(173, 157);
-            this.btnListarPersonal.TabIndex = 5;
+            this.btnListarPersonal.TabIndex = 3;
             this.btnListarPersonal.UseVisualStyleBackColor = true;
             this.btnListarPersonal.Click += new System.EventHandler(this.btnListarPersonal_Click);
             // 
@@ -194,7 +194,7 @@
             this.btnAcercaDe.Location = new System.Drawing.Point(12, 417);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Size = new System.Drawing.Size(75, 23);
-            this.btnAcercaDe.TabIndex = 4;
+            this.btnAcercaDe.TabIndex = 7;
             this.btnAcercaDe.Text = "Acerca de";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
             this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);

@@ -86,7 +86,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(1050, 62);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 5;
+            this.dtpFecha.TabIndex = 2;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // lblTotalAsistencias
@@ -105,7 +105,7 @@
             this.btnExcel.Location = new System.Drawing.Point(938, 59);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(49, 30);
-            this.btnExcel.TabIndex = 7;
+            this.btnExcel.TabIndex = 1;
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 

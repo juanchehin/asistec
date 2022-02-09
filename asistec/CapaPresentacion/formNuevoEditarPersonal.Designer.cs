@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNuevoEditarPersonal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarEscuela = new System.Windows.Forms.Button();
             this.cbEscuela = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAgregarEscuela = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,13 +68,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // btnAgregarEscuela
+            // 
+            this.btnAgregarEscuela.Location = new System.Drawing.Point(426, 149);
+            this.btnAgregarEscuela.Name = "btnAgregarEscuela";
+            this.btnAgregarEscuela.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarEscuela.TabIndex = 5;
+            this.btnAgregarEscuela.Text = "Agregar escuela";
+            this.btnAgregarEscuela.UseVisualStyleBackColor = true;
+            this.btnAgregarEscuela.Click += new System.EventHandler(this.btnAgregarEscuela_Click);
+            // 
             // cbEscuela
             // 
             this.cbEscuela.FormattingEnabled = true;
             this.cbEscuela.Location = new System.Drawing.Point(120, 151);
             this.cbEscuela.Name = "cbEscuela";
             this.cbEscuela.Size = new System.Drawing.Size(300, 21);
-            this.cbEscuela.TabIndex = 6;
+            this.cbEscuela.TabIndex = 4;
             // 
             // label5
             // 
@@ -112,7 +122,7 @@
             this.txtObservaciones.Location = new System.Drawing.Point(120, 197);
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(364, 96);
-            this.txtObservaciones.TabIndex = 4;
+            this.txtObservaciones.TabIndex = 6;
             this.txtObservaciones.Text = "";
             // 
             // label4
@@ -156,7 +166,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(12, 416);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -166,7 +176,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(123, 416);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -180,16 +190,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnAgregarEscuela
-            // 
-            this.btnAgregarEscuela.Location = new System.Drawing.Point(426, 149);
-            this.btnAgregarEscuela.Name = "btnAgregarEscuela";
-            this.btnAgregarEscuela.Size = new System.Drawing.Size(108, 23);
-            this.btnAgregarEscuela.TabIndex = 7;
-            this.btnAgregarEscuela.Text = "Agregar escuela";
-            this.btnAgregarEscuela.UseVisualStyleBackColor = true;
-            this.btnAgregarEscuela.Click += new System.EventHandler(this.btnAgregarEscuela_Click);
             // 
             // formNuevoEditarPersonal
             // 

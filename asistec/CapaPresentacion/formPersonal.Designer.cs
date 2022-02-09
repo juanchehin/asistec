@@ -102,7 +102,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(741, 6);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(34, 31);
-            this.btnActualizar.TabIndex = 6;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -111,7 +111,7 @@
             this.btnMarcarAsistencia.Location = new System.Drawing.Point(632, 6);
             this.btnMarcarAsistencia.Name = "btnMarcarAsistencia";
             this.btnMarcarAsistencia.Size = new System.Drawing.Size(103, 31);
-            this.btnMarcarAsistencia.TabIndex = 7;
+            this.btnMarcarAsistencia.TabIndex = 4;
             this.btnMarcarAsistencia.Text = "Marcar asistencia";
             this.btnMarcarAsistencia.UseVisualStyleBackColor = true;
             this.btnMarcarAsistencia.Click += new System.EventHandler(this.btnMarcarAsistencia_Click);
@@ -122,7 +122,7 @@
             this.btnBuscarPersonal.Location = new System.Drawing.Point(267, 12);
             this.btnBuscarPersonal.Name = "btnBuscarPersonal";
             this.btnBuscarPersonal.Size = new System.Drawing.Size(34, 25);
-            this.btnBuscarPersonal.TabIndex = 8;
+            this.btnBuscarPersonal.TabIndex = 2;
             this.btnBuscarPersonal.UseVisualStyleBackColor = true;
             this.btnBuscarPersonal.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -131,7 +131,7 @@
             this.txtDNI.Location = new System.Drawing.Point(118, 17);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(143, 20);
-            this.txtDNI.TabIndex = 9;
+            this.txtDNI.TabIndex = 1;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label2

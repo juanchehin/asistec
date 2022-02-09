@@ -85,7 +85,7 @@
             this.btnAgregarEscuela.Location = new System.Drawing.Point(261, 69);
             this.btnAgregarEscuela.Name = "btnAgregarEscuela";
             this.btnAgregarEscuela.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarEscuela.TabIndex = 5;
+            this.btnAgregarEscuela.TabIndex = 1;
             this.btnAgregarEscuela.Text = "Agregar";
             this.btnAgregarEscuela.UseVisualStyleBackColor = true;
             this.btnAgregarEscuela.Click += new System.EventHandler(this.btnAgregarEscuela_Click);
@@ -95,7 +95,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(342, 69);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -106,7 +106,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(521, 60);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(38, 32);
-            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.TabIndex = 3;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
