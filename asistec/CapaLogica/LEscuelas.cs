@@ -27,8 +27,6 @@ namespace educatec.CapaLogica
         //de la CapaDatos
         public static string InsertarEscuela(string Escuela, string Observaciones)
         {
-            // Console.WriteLine("En insertar , nombre es " + nombre);
-            // Console.WriteLine("Escuela en logica es : " + Escuela);
 
             DEscuelas Obj = new DEscuelas();
             Obj.Escuela = Escuela;
@@ -41,17 +39,12 @@ namespace educatec.CapaLogica
         {
 
             DataTable tabla = new DataTable();
-            // tabla = objetoCD.DameEscuela(IdProducto);
-            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
-            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
         public static string EliminarEscuela(int IdEscuela)
         {
             
             DEscuelas Obj = new DEscuelas();
-            // Obj.IdEscuela = IdEscuela;
-            // Console.WriteLine("Obj en capa negocio es : " + Obj.EliminarEscuela(IdEscuela));
             return Obj.EliminarEscuela(IdEscuela);
         }
     }

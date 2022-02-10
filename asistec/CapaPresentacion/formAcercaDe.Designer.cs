@@ -51,9 +51,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(103, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 13);
+            this.label1.Size = new System.Drawing.Size(371, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Asistec es un sistema de asistencia para control de horario del personal";
+            this.label1.Text = "\"Asistec\" es un sistema de asistencias para el control de horario del personal.";
             // 
             // linkLabel1
             // 

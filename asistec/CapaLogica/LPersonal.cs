@@ -20,8 +20,6 @@ namespace asistec.CapaLogica
 
         public static string InsertarPersonal(int DNI,string Escuela,string Apellidos, string Nombres, string Observaciones)
         {
-            Console.WriteLine("En InsertarPersonal " + DNI);
-
             DPersonal Obj = new DPersonal();
             Obj.DNI = DNI;
             Obj.Escuela = Escuela;
@@ -73,10 +71,7 @@ namespace asistec.CapaLogica
 
         public DataTable BuscarPersonal(int DNI)
         {
-            Console.WriteLine("DNI en capa negocio es : " + DNI);
             DPersonal Obj = new DPersonal();
-            // Obj.TextoBuscar = textobuscar;
-
             return Obj.BuscarPersonal(DNI);
         }
     }

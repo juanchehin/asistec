@@ -57,10 +57,6 @@ namespace educatec.CapaDatos
             string rpta = "";
             try
             {
-
-                Console.WriteLine("Escuela es : " + Escuela.Escuela);
-                Console.WriteLine("Observaciones es : " + Escuela.Observaciones);
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_escuela";
@@ -78,11 +74,6 @@ namespace educatec.CapaDatos
                 pObservaciones.Size = 255;
                 pObservaciones.Value = Escuela.Observaciones;
                 comando.Parameters.Add(pObservaciones);
-
-                
-
-                Console.WriteLine("el comando es : " + comando.CommandText);
-                //Ejecutamos nuestro comando
 
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se edito el Registro";
                 comando.Parameters.Clear();
@@ -105,8 +96,6 @@ namespace educatec.CapaDatos
             string rpta = "";
             try
             {
-                Console.WriteLine("El Escuela es " + IdEscuela);
-
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_eliminar_escuela";
@@ -134,7 +123,6 @@ namespace educatec.CapaDatos
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             comando.Parameters.Clear();

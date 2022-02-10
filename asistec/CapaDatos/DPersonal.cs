@@ -68,7 +68,6 @@ namespace educatec.CapaDatos
 
         public DataTable BuscarPersonal(int DNI)
         {
-            Console.WriteLine("DNI en capa datos es : " + DNI);
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_buscar_personal";
@@ -76,7 +75,6 @@ namespace educatec.CapaDatos
             MySqlParameter pDNI = new MySqlParameter();
             pDNI.ParameterName = "@pDNI";
             pDNI.MySqlDbType = MySqlDbType.Int32;
-            // pIdProducto.Size = 60;
             pDNI.Value = DNI;
             comando.Parameters.Add(pDNI);
 
@@ -92,7 +90,6 @@ namespace educatec.CapaDatos
 
         public string EditarPersonal(DPersonal Personal)
         {
-            // Console.WriteLine("Cliente.IdCliente es 1 : " + Cliente.IdCliente);
             string rpta = "";
             comando.Parameters.Clear();// si no ponerlo al comienzo de esta funcion
             try
@@ -134,9 +131,7 @@ namespace educatec.CapaDatos
             }
             catch (Exception ex)
             {
-
                 rpta = ex.Message;
-                Console.WriteLine("rpta es : " + rpta);
             }
             finally
             {
@@ -163,8 +158,6 @@ namespace educatec.CapaDatos
                 pDNI.Size = 11;
                 pDNI.Value = Personal.DNI;
                 comando.Parameters.Add(pDNI);
-
-                // Console.WriteLine("pNombre es : " + pNombre.Value);
 
                 MySqlParameter pApellidos = new MySqlParameter();
                 pApellidos.ParameterName = "@pApellidos";
@@ -204,7 +197,6 @@ namespace educatec.CapaDatos
         public string EliminarPersonal(DPersonal Personal)
         {
             string rpta = "";
-            // SqlConnection SqlCon = new SqlConnection();
             try
             {
 
@@ -219,11 +211,6 @@ namespace educatec.CapaDatos
                 pIdPersonal.Value = Personal.IdPersonal;
                 comando.Parameters.Add(pIdPersonal);
 
-                Console.WriteLine(pIdPersonal.Value.ToString());
-
-                //Ejecutamos nuestro comando
-
-                //rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se inserto el Registro";
 
 
@@ -234,7 +221,6 @@ namespace educatec.CapaDatos
             }
             finally
             {
-                //if (conexion. == ConnectionState.Open) 
                 conexion.CerrarConexion();
             }
             return rpta;

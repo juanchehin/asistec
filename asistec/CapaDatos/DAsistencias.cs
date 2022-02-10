@@ -61,8 +61,6 @@ namespace educatec.CapaDatos
 
         public DataTable ListarAsistencias(DateTime Fecha)
         {
-            Console.WriteLine("Fecha en capa datos es : " + Fecha);
-
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_dame_asistencias_por_dia";
@@ -88,26 +86,12 @@ namespace educatec.CapaDatos
         public string InsertarAsistencia(DAsistencias Asistencia)
         {
             string rpta = "";
-            // SqlConnection SqlCon = new SqlConnection();
             try
             {
-
-                // Console.WriteLine("Producto es : " + Producto.Producto);
-
-                //Código
-                /*SqlCon.ConnectionString = Conexion.Cn;
-                SqlCon.Open();
-                //Establecer el Comando
-                SqlCommand SqlCmd = new SqlCommand(); */
 
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_asistencia";
-
-                /*SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spinsertar_articulo";
-                SqlCmd.CommandType = CommandType.StoredProcedure; */
-
 
                 MySqlParameter pDNI = new MySqlParameter();
                 pDNI.ParameterName = "@pDNI";
@@ -123,33 +107,6 @@ namespace educatec.CapaDatos
                 pObservaciones.Value = Asistencia.Observaciones;
                 comando.Parameters.Add(pObservaciones);
 
-                /*MySqlParameter pNombres = new MySqlParameter();
-                pNombres.ParameterName = "@pNombres";
-                pNombres.MySqlDbType = MySqlDbType.VarChar;
-                pNombres.Size = 60;
-                pNombres.Value = Asistencia.Nombres;
-                comando.Parameters.Add(pNombres);
-
-                MySqlParameter pNombres = new MySqlParameter();
-                pNombres.ParameterName = "@pNombres";
-                pNombres.MySqlDbType = MySqlDbType.VarChar;
-                pNombres.Size = 60;
-                pNombres.Value = Asistencia.Nombres;
-                comando.Parameters.Add(pNombres);
-
-                MySqlParameter pNombres = new MySqlParameter();
-                pNombres.ParameterName = "@pNombres";
-                pNombres.MySqlDbType = MySqlDbType.VarChar;
-                pNombres.Size = 60;
-                pNombres.Value = Asistencia.Nombres;
-                comando.Parameters.Add(pNombres);*/
-
-                
-
-                // Console.WriteLine("el comando es : " + comando.CommandText[0]);
-                //Ejecutamos nuestro comando
-
-                // ExecuteNonQuery devuelve el numero de filas afectadas
                 rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se ingreso el Registro";
                 comando.Parameters.Clear();
 
