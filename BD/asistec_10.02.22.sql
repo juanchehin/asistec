@@ -29,12 +29,15 @@ CREATE TABLE IF NOT EXISTS `asistencias` (
   CONSTRAINT `fk_asistencias_personal` FOREIGN KEY (`IdPersonal`) REFERENCES `personal` (`IdPersonal`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla asistec.asistencias: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.asistencias: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `asistencias` DISABLE KEYS */;
 INSERT INTO `asistencias` (`IdAsistencia`, `IdPersonal`, `HorarioEntrada`, `HorarioSalida`, `Observacion`) VALUES
 	(1, 1, '2021-12-27 14:01:00', '2021-12-27 18:02:20', '-'),
 	(2, 2, '2021-12-27 14:10:22', '2021-12-27 18:03:20', '-'),
-	(3, 2, '2021-12-28 14:02:02', '2021-12-28 18:02:20', '-');
+	(3, 2, '2021-12-28 14:02:02', '2021-12-28 18:02:20', '-'),
+	(4, 9, '2022-02-10 11:25:42', '2022-02-10 11:35:53', '-'),
+	(5, 17, '2022-02-10 11:35:37', NULL, '-'),
+	(6, 2, '2022-02-10 11:36:39', NULL, '-');
 /*!40000 ALTER TABLE `asistencias` ENABLE KEYS */;
 
 -- Volcando estructura para procedimiento asistec.bsp_alta_asistencia
@@ -220,7 +223,7 @@ SALIR:BEGIN
 		FROM		asistencias a 
 					LEFT JOIN personal p on a.Idpersonal = p.IdPersonal
 					LEFT JOIN escuelas e on e.IdEscuela = p.IdEscuela
-		WHERE		DATE_FORMAT(a.HorarioEntrada,'%Y-%m-%d') = pFecha OR DATE_FORMAT(a.HorarioSalida,'%Y-%m-%d') = pFecha AND p.EstadoPersonal = 'A'
+		WHERE		DATE_FORMAT(a.HorarioEntrada,'%Y-%m-%d') = pFecha OR DATE_FORMAT(a.HorarioSalida,'%Y-%m-%d') = pFecha
 		GROUP BY	p.IdPersonal
 		ORDER BY	a.IdAsistencia asc;
 		-- LIMIT 		pDesde,5;
@@ -333,9 +336,9 @@ CREATE TABLE IF NOT EXISTS `escuelas` (
   `Escuela` varchar(255) DEFAULT NULL COMMENT 'Nombre de la escuela',
   `Observaciones` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`IdEscuela`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla asistec.escuelas: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla asistec.escuelas: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `escuelas` DISABLE KEYS */;
 INSERT INTO `escuelas` (`IdEscuela`, `Escuela`, `Observaciones`) VALUES
 	(1, 'Escuela Ej 1', '-'),
@@ -343,7 +346,8 @@ INSERT INTO `escuelas` (`IdEscuela`, `Escuela`, `Observaciones`) VALUES
 	(3, 'Escuela Ej 3', '-'),
 	(5, 'sdfs', 'fdsfs'),
 	(9, 'Sarmiento', '456'),
-	(10, 'Escuela 5', '');
+	(10, 'Escuela 5', ''),
+	(11, 'San jose', 'Los sarmientos');
 /*!40000 ALTER TABLE `escuelas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla asistec.personal
@@ -361,17 +365,17 @@ CREATE TABLE IF NOT EXISTS `personal` (
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
 INSERT INTO `personal` (`IdPersonal`, `IdEscuela`, `Apellidos`, `Nombres`, `DNI`, `Estado`) VALUES
 	(1, 1, 'Perez', 'Juan', 12564587, 'E'),
-	(2, 1, 'Gomez', 'Roberto', 3698456, 'S'),
+	(2, 1, 'Gomez', 'Roberto', 3698456, 'E'),
 	(4, 2, 'sada', 'sadas', 123, 'S'),
-	(7, 3, 'Chehin', 'JUan', 37092016, 'E'),
 	(9, 3, 'Morales', 'Mariano', 3702201, 'S'),
 	(10, 9, 'Messi', 'Lionel', 25423123, NULL),
-	(11, 1, 'Veron', 'Bruja', 12456457, 'E'),
+	(11, 1, 'Veron', 'Bruja', 12456457, 'S'),
 	(12, 1, 'Dip', 'Hugo', 42157852, 'E'),
 	(13, 1, 'Abodacier', 'Roberto', 23121544, 'E'),
 	(14, 3, 'Bolati', 'Karelina', 45621157, NULL),
 	(15, 10, 'Batistuta', 'Gabriel', 3554125, 'S'),
-	(16, 9, 'Noblex', 'Noblex u', 12457863, NULL);
+	(16, 9, 'Noblex', 'Noblex u', 12457863, NULL),
+	(17, 1, 'Flores', 'Gabriela Romina', 256452, 'E');
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
