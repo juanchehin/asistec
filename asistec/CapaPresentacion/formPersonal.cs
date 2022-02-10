@@ -85,8 +85,12 @@ namespace educatec.CapaPresentacion
         }
         private void BuscarPersonal()
         {
-            this.dataListadoPersonal.DataSource = objetoCL.BuscarPersonal(Convert.ToInt32(this.txtDNI.Text));
-            lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
+            if(!String.IsNullOrEmpty(this.txtDNI.Text))
+            {
+                this.dataListadoPersonal.DataSource = objetoCL.BuscarPersonal(Convert.ToInt32(this.txtDNI.Text));
+                lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
+            }
+            
         }
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
