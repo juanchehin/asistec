@@ -10,6 +10,7 @@ namespace educatec.CapaPresentacion
         LPersonal objetoCL = new LPersonal();
         int DNI;
         string rpta;
+        private int IdPersonal;
         public formPersonal()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace educatec.CapaPresentacion
                 int selectedrowindex = dataListadoPersonal.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataListadoPersonal.Rows[selectedrowindex];
                 this.DNI = Convert.ToInt32(selectedRow.Cells["DNI"].Value);
+                this.IdPersonal = Convert.ToInt32(selectedRow.Cells["IdPersonal"].Value);
             }
         }
 
@@ -108,6 +110,35 @@ namespace educatec.CapaPresentacion
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 this.BuscarPersonal();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Realmente Desea Eliminar el personal", "Asistec", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string rpta = LPersonal.EliminarPersonal(this.IdPersonal);
+
+                    if (rpta == "OK")
+                    {
+                        this.MensajeOk("Borrado con exito");
+                    }
+                    else
+                    {
+                        this.MensajeError(rpta);
+                    }
+                    this.ListarPersonal();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
     }

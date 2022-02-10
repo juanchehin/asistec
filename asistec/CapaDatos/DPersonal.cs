@@ -187,10 +187,7 @@ namespace educatec.CapaDatos
                 pEscuela.Value = Personal.Escuela;
                 comando.Parameters.Add(pEscuela);
 
-                // Console.WriteLine("el comando es : " + comando.CommandText[0]);
-                // Ejecutamos nuestro comando
-
-                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se inserto el Registro";
+                rpta = comando.ExecuteScalar().ToString();
             }
             catch (Exception ex)
             {
@@ -222,9 +219,12 @@ namespace educatec.CapaDatos
                 pIdPersonal.Value = Personal.IdPersonal;
                 comando.Parameters.Add(pIdPersonal);
 
+                Console.WriteLine(pIdPersonal.Value.ToString());
+
                 //Ejecutamos nuestro comando
 
-                rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                //rpta = comando.ExecuteNonQuery() == 1 ? "OK" : "NO se Elimino el Registro";
+                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se inserto el Registro";
 
 
             }

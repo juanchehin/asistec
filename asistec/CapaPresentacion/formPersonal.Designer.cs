@@ -39,6 +39,7 @@
             this.btnBuscarPersonal = new System.Windows.Forms.Button();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             // btnNuevoPersonal
             // 
-            this.btnNuevoPersonal.Location = new System.Drawing.Point(527, 6);
+            this.btnNuevoPersonal.Location = new System.Drawing.Point(422, 6);
             this.btnNuevoPersonal.Name = "btnNuevoPersonal";
             this.btnNuevoPersonal.Size = new System.Drawing.Size(99, 31);
             this.btnNuevoPersonal.TabIndex = 3;
@@ -108,7 +109,7 @@
             // 
             // btnMarcarAsistencia
             // 
-            this.btnMarcarAsistencia.Location = new System.Drawing.Point(632, 6);
+            this.btnMarcarAsistencia.Location = new System.Drawing.Point(527, 6);
             this.btnMarcarAsistencia.Name = "btnMarcarAsistencia";
             this.btnMarcarAsistencia.Size = new System.Drawing.Size(103, 31);
             this.btnMarcarAsistencia.TabIndex = 4;
@@ -143,11 +144,22 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Busqueda por DNI";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(636, 6);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(99, 31);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar personal";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // formPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 592);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDNI);
             this.Controls.Add(this.btnBuscarPersonal);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Button btnBuscarPersonal;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -30,6 +30,26 @@ namespace educatec.CapaPresentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            this.guardarAsistencia();
+        }        
+
+        private void btnAgregarEscuela_Click(object sender, EventArgs e)
+        {
+            formNuevaEditarEscuela frm = new formNuevaEditarEscuela();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                this.guardarAsistencia();
+            }
+        }
+
+        private void guardarAsistencia()
+        {
             int i;
             string rpta = "";
             try
@@ -38,7 +58,7 @@ namespace educatec.CapaPresentacion
                 {
                     MensajeError("El campo DNI debe ser numerico");
                     return;
-                }                
+                }
                 if (this.txtDNI.Text == string.Empty)
                 {
                     MensajeError("El campo DNI es obligatorio");
@@ -50,8 +70,6 @@ namespace educatec.CapaPresentacion
                     if (rpta.Equals("OK"))
                     {
                         this.MensajeOk("Se Insertó de forma correcta el registro");
-
-                        // this.Close();
                     }
                     else
                     {
@@ -66,7 +84,6 @@ namespace educatec.CapaPresentacion
             txtDNI.Clear();
             tbObservaciones.Clear();
         }
-
         //Mostrar Mensaje de Error
         private void MensajeError(string mensaje)
         {
@@ -76,55 +93,6 @@ namespace educatec.CapaPresentacion
         {
             MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }      
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string rpta = "";
-                if (this.txtDNI.Text == string.Empty)
-                {
-                    MensajeError("El campo DNI es obligatorio y debe ser numerico");
-                }
-                else
-                {
-                    rpta = LAsistencias.InsertarAsistencia(Convert.ToInt32(txtDNI),this.tbObservaciones.Text.Trim());
-
-                    if (rpta.Equals("OK"))
-                    {
-                        this.MensajeOk("Se Insertó de forma correcta el registro");
-                        
-                        // this.Close();
-                    }
-                    else
-                    {
-                        this.MensajeError(rpta);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-
-        }
-
-        private void btnAgregarEscuela_Click(object sender, EventArgs e)
-        {
-            formNuevaEditarEscuela frm = new formNuevaEditarEscuela();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void txtDNI_TextChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }
