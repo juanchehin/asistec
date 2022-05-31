@@ -399,7 +399,7 @@ FodyWeavers.xsd
 .vs/*
 
 /bin
-asistec/bin
+/asistec/bin
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
