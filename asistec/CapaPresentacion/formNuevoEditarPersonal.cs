@@ -89,16 +89,7 @@ namespace asistec.CapaPresentacion
             cbEscuela.DisplayMember = "Escuela";
             cbEscuela.ValueMember = "IdEscuela";
         }
-        private void MensajeError(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        private void MensajeOk(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -114,23 +105,24 @@ namespace asistec.CapaPresentacion
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
+            // cargando page = new cargando();
+            // frm.MdiParent = this.MdiParent;
+            // page.Show();
+            
             //configuracion de ventana para seleccionar un archivo
             OpenFileDialog oOpenFileDialog = new OpenFileDialog();
             oOpenFileDialog.Filter = "Excel Worbook|*.xlsx";
 
             if (oOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // cboHojas.Items.Clear();
-                // dgvDatos.DataSource = null;
+
                 int i = 1;
                 int j = 0;
-                string rpta = "";
-
-                // txtRuta.Text = oOpenFileDialog.FileName;
+                int regCargados = 0;
+                string rpta;
 
                 //FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
                 FileStream fsSource = new FileStream(oOpenFileDialog.FileName, FileMode.Open, FileAccess.Read);
-
 
                 //ExcelReaderFactory.CreateBinaryReader = formato XLS
                 //ExcelReaderFactory.CreateOpenXmlReader = formato XLSX
@@ -140,7 +132,10 @@ namespace asistec.CapaPresentacion
                 DataSet result = excelReader.AsDataSet();
                 // excelReader.IsFirstRowAsColumnNames = true;
                 DataTable dt = result.Tables[0];
-                
+
+                formCargando page = new formCargando();
+                page.MdiParent = this.MdiParent;
+                page.Show();
 
                 while (i < excelReader.RowCount)
                 {
@@ -156,73 +151,30 @@ namespace asistec.CapaPresentacion
                         j = j+1;
 
                         rpta = LPersonal.InsertarPersonal(Convert.ToInt32(DNI.Trim()), Escuela.Trim(), Apellidos.Trim(), Nombres.Trim(), Observaciones.Trim());
-                    
+                        
+                        if(rpta == "Ok" || rpta == "OK")
+                        {
+                            regCargados++;
+                        }
                     i = i+1;
                     j = 0;
                 }
 
-                /*foreach (DataTable dt in excelReader)
-                {
-                    string DNI = dt.Rows[1][0].ToString();
-                }*/
-
-                //convierte todas las hojas a un DataSet
-                /*dtsTablas = reader.AsDataSet(new ExcelDataSetConfiguration()
-                {
-                    ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
-                    {
-                        UseHeaderRow = true
-                    }
-                });*/
-
-                //obtenemos las tablas y añadimos sus nombres en el desplegable de hojas
-                /*foreach (DataTable tabla in dtsTablas.Tables)
-                {
-                    //cboHojas.Items.Add(tabla.TableName);
-                }
-                // cboHojas.SelectedIndex = 0;
-
-                reader.Close();*/
-
+                page.Dispose();
+                MensajeOk("Se cargaron " + regCargados + " registros en la Base de datos");
             }
         }
 
-        public bool CargarData(DataTable tbData)
+        private void MensajeError(string mensaje)
         {
-            bool resultado = true;
-            /*using (SqlConnection cn = new SqlConnection(Configuracion.Conexion))
-            {
-                cn.Open();
-                using (SqlBulkCopy s = new SqlBulkCopy(cn))
-                {
-
-                    //ingresamos COLUMNAS ORIGEN | COLUMNAS DESTINOS
-                    s.ColumnMappings.Add("Documento Identidad", "DocumentoIdentidad");
-                    s.ColumnMappings.Add("Nombres", "Nombres");
-                    s.ColumnMappings.Add("Telefono", "Telefono");
-                    s.ColumnMappings.Add("Correo", "Correo");
-                    s.ColumnMappings.Add("Ciudad", "Ciudad");
-
-                    //definimos la tabla a cargar
-                    s.DestinationTableName = "USUARIO";
-
-
-                    s.BulkCopyTimeout = 1500;
-                    try
-                    {
-                        s.WriteToServer(tbData);
-                    }
-                    catch (Exception e)
-                    {
-                        string st = e.Message;
-                        resultado = false;
-                    }
-
-
-                }
-            }
-            */
-            return resultado;
+            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+
     }
 }
