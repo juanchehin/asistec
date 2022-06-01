@@ -28,8 +28,18 @@ SALIR:BEGIN
 		LEAVE SALIR;
     END IF;
     
-    -- Obtengo el id de la escuela seleccionada
-    SET pIdEscuela = (SELECT IdEscuela FROM Escuelas WHERE Escuela = pEscuela);
+    -- Consulto si existe la escuela, si no, la creo
+    IF EXISTS(SELECT Escuela FROM escuelas WHERE Escuela = pEscuela) THEN
+		-- Obtengo el id de la escuela seleccionada
+		SET pIdEscuela = (SELECT IdEscuela FROM Escuelas WHERE Escuela = pEscuela);
+	ELSE
+		SET pIdEscuela = 1 + (SELECT COALESCE(MAX(IdEscuela),0)
+								FROM escuelas);
+                                
+		INSERT INTO escuelas VALUES(pIdEscuela,pEscuela,'-');
+    END IF;
+    
+    
 	START TRANSACTION;
 		SET pIdPersonal = 1 + (SELECT COALESCE(MAX(IdPersonal),0)
 								FROM Personal);
