@@ -287,5 +287,6 @@
     <Content Include="recursos\excel.png" />
     <Content Include="recursos\excel1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
