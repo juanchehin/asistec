@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asistec", "asistec\asistec.csproj", "{CAA2B2A4-1F3F-4258-A5FC-C5D923C366C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asistec.API", "Asistec.API\Asistec.API.csproj", "{25FBDBD0-DD4B-4A04-AC7A-7AE19C656AA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asistec.API", "Asistec.API\Asistec.API.csproj", "{25FBDBD0-DD4B-4A04-AC7A-7AE19C656AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

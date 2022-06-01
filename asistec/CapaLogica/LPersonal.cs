@@ -1,10 +1,6 @@
 ﻿using asistec.CapaDatos;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace asistec.CapaLogica
 {
@@ -44,12 +40,12 @@ namespace asistec.CapaLogica
             return Obj.EliminarPersonal(Obj);
         }
 
-        // Devuelve solo un Cliente
-        public DataTable DamePersonal(int IdCliente)
+        // Devuelve solo un Personal
+        public DataTable DamePersonal(int IdPersonal)
         {
 
             DataTable tabla = new DataTable();
-            tabla = objetoCD.DamePersonal(IdCliente);
+            tabla = objetoCD.DamePersonal(IdPersonal);
             Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
             Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
