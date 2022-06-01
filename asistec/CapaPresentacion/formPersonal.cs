@@ -1,9 +1,9 @@
 ﻿using asistec.CapaLogica;
-using educatec.CapaLogica;
+using asistec.CapaLogica;
 using System;
 using System.Windows.Forms;
 
-namespace educatec.CapaPresentacion
+namespace asistec.CapaPresentacion
 {
     public partial class formPersonal : Form
     {

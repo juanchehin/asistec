@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace educatec.CapaDatos
+namespace asistec.CapaDatos
 {
     public class DEscuelas
     {

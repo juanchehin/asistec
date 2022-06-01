@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace educatec.CapaPresentacion
+namespace asistec.CapaPresentacion
 {
     public partial class formAcercaDe : Form
     {

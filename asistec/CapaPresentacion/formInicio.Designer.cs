@@ -1,4 +1,4 @@
-﻿namespace educatec.CapaPresentacion
+﻿namespace asistec.CapaPresentacion
 {
     partial class formInicio
     {
@@ -220,7 +220,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "formInicio";
-            this.Text = "Asistencias - Educatec";
+            this.Text = "Asistencias - asistec";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

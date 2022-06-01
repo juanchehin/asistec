@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 
-namespace educatec.CapaDatos
+namespace asistec.CapaDatos
 {
     public class DAsistencias
     {

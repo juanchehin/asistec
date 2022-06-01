@@ -5,8 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
-namespace educatec.CapaDatos
+namespace asistec.CapaDatos
 {
     public class DPersonal
     {
@@ -148,6 +149,8 @@ namespace educatec.CapaDatos
             string rpta = "";
             try
             {
+
+                
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "bsp_alta_personal";
@@ -179,6 +182,7 @@ namespace educatec.CapaDatos
                 pEscuela.Size = 60;
                 pEscuela.Value = Personal.Escuela;
                 comando.Parameters.Add(pEscuela);
+
 
                 rpta = comando.ExecuteScalar().ToString();
             }

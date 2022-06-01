@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace educatec.CapaDatos
+namespace asistec.CapaDatos
 {
     public class DConexion
     {
@@ -14,7 +14,7 @@ namespace educatec.CapaDatos
 
         public DConexion()
         {
-            AbrirConexion();
+            // AbrirConexion();
         }
         public MySqlConnection AbrirConexion()
         {

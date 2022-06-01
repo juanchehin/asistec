@@ -1,4 +1,4 @@
-﻿namespace educatec.CapaPresentacion
+﻿namespace asistec.CapaPresentacion
 {
     partial class formPersonal
     {

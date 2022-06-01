@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAIgOSURBVHhe7f0H
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAIgOSURBVHhe7f0H
         lBRHmu6Nz+ysu3f33O/eu3ev2/3u3f+uVt2NE4PMjAzQXdUeGhrTeGigTVW1gcZ7aOSwQgaQkBACISSE
         kXASCOGdAHkJCSEhi5E0Gml2Z2dnRzsu/hmp6Pma4qmoysrIqqzu5znnd4Sgwma875uRGRnxPYqiKIqi
         KIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqi
@@ -703,6 +703,21 @@
         URRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRF
         URRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRFURRF
         URRFURRFURRFURRFURRFUd/73v8fBhlQ6pgpKlYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAKUAAAClAXDE3lUAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAByklEQVRIS2P4//8/0Vi7QZvHoMHAwDjNmBWbPDaMVRCEjauMJXXrDD31aowrdWuNVurVGt/UqzX6
+        C8T/gbgAmx5smCE0NJTZsMFQS7fWOEqvzqhLv9ZwF9CAl1CDsOM6owZshmHDDHq1hkewGoIHB0+JWPD6
+        /XsHQvjVqy8SQAuwG4IP926b+P/N+4/E4Ae0tuA/WRaUrar+v//6kf9Hbp2EG3T72QOwGIgm2YKE2cn/
+        7dqd4HzjVvP/Fn02YAwyFGRQyrJMMB9E47TAoM7k/+wDc/979fnCxRrWN/3/9evX/4wFWXAxsn1g3GD+
+        /9WHV//vvLj737bN8X/4tKj/X75//X/w+iGw5RRbAMLRM+L+f/72+f+Ze2f/P3j1EIxt2hxQ1JAdRDBc
+        sLQIHCw/f/0E+wJdnuJInrZ3BtgCEF54ZDGGPEUWZC3KBbt8zam1YMNBlnRs6UJRQ3YQmTZa/n/76e3/
+        y4+u/DdptABH7I5Lu/7/+Pnjf8S0aLg6sn2gX2v8f9O5zf89en3gYiBLV5xY9d9/YhBcjOI4IIQpTkWE
+        MM19QPPCjsTimsYVDs2rTGyCIEy1Sh+bIC4MarYALTMG0mzY5DHxfwYANc3g5dNF72QAAAAASUVORK5C
+        YII=
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

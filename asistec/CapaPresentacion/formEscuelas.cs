@@ -1,5 +1,5 @@
-﻿using educatec.CapaLogica;
-using educatec.CapaPresentacion;
+﻿using asistec.CapaLogica;
+using asistec.CapaPresentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
