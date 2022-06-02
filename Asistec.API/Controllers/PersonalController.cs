@@ -16,7 +16,7 @@ namespace Asistec.API.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        [HttpGet("{idPersonal}", Name = "GetDiscount")]
+        [HttpGet("{idPersonal}", Name = "GetPersonal")]
         [ProducesResponseType(typeof(Personal), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Personal>> GetPersonal(int idPersonal)
         {
@@ -43,7 +43,7 @@ namespace Asistec.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("{idPersonal}", Name = "DeleteDiscount")]
+        [HttpDelete("{idPersonal}", Name = "DeletePersonal")]
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<bool>> DeletePersonal(int idPersonal)
         {
