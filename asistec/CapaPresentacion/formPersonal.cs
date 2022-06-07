@@ -37,7 +37,7 @@ namespace asistec.CapaPresentacion
             //dataListadoPersonal.DataSource.Visible = false;
 
             lblTotalPersonal.Text = totalPersonal;
-            totalPersonalCambiar = dataListadoPersonal.Rows.Count;
+            totalPersonalCambiar = Convert.ToInt32(totalPersonal);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace asistec.CapaPresentacion
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            this.desde = this.desde + 15;
+            this.desde = this.desde + 10;
 
             if (desde >= this.totalPersonalCambiar)
             {
@@ -176,7 +176,7 @@ namespace asistec.CapaPresentacion
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            this.desde = this.desde - 15;
+            this.desde = this.desde - 10;
 
             if (desde >= this.totalPersonalCambiar)
             {
