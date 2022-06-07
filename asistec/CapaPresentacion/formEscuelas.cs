@@ -14,10 +14,11 @@ namespace asistec.CapaPresentacion
 {
     public partial class formEscuelas : Form
     {
-        LEscuelas objetoCN = new LEscuelas();
+        LEscuelas objetoCL = new LEscuelas();
         private int IdEscuela;
         int desde = 0;
-        int totalEscuelas = 0;
+        string totalEscuelas;
+        DataSet ds = new DataSet();
         public formEscuelas()
         {
             InitializeComponent();
@@ -26,12 +27,10 @@ namespace asistec.CapaPresentacion
 
         public void ListarEscuelas(int pDesde)
         {
-            // Console.WriteLine("Ahora va el mostrar productos");
-            dataListadoEscuelas.DataSource = objetoCN.ListarEscuelas(pDesde);
-            dataListadoEscuelas.Columns[0].Visible = false;
-            lblTotalEscuelas.Text = Convert.ToString(dataListadoEscuelas.Rows.Count);
-            totalEscuelas = dataListadoEscuelas.Rows.Count;
-            // this.banderaFormularioHijo = false;
+            ds = objetoCL.ListarEscuelas(pDesde);
+            dataListadoEscuelas.DataSource = ds.Tables[0];
+            totalEscuelas = ds.Tables[1].Rows[0][0].ToString();
+            lblTotalEscuelas.Text = totalEscuelas;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -95,29 +94,10 @@ namespace asistec.CapaPresentacion
             }
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            this.desde = this.desde - 15;
-
-            if (desde >= this.totalEscuelas)
-            {
-                return;
-            }
-
-            if (desde < 0)
-            {
-                return;
-            }
-
-            //this.desde += valor;
-            this.ListarEscuelas(this.desde);
-        }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            this.desde = this.desde + 15;
-
-            if (desde >= this.totalEscuelas)
+            if ((desde + 10) >= Convert.ToInt32(totalEscuelas))
             {
                 return;
             }
@@ -127,8 +107,21 @@ namespace asistec.CapaPresentacion
                 return;
             }
 
-            //this.desde += valor;
+            //this.desde = this.desde + 10;
+            this.desde += 10;
             this.ListarEscuelas(this.desde);
         }
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (desde <= 0)
+            {
+                this.desde = 0;
+                return;
+            }
+            //this.desde = this.desde - 10;
+            this.desde -= 10;
+            this.ListarEscuelas(this.desde);
+        }
+
     }
 }

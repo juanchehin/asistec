@@ -38,9 +38,8 @@ namespace asistec.CapaDatos
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
 
-        public DataTable ListarEscuelas(int pDesde)
+        public DataSet ListarEscuelas(int pDesde)
         {
-
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_listar_escuelas";
@@ -52,10 +51,15 @@ namespace asistec.CapaDatos
             desde.Value = pDesde;
             comando.Parameters.Add(desde);
 
-            tabla.Clear();
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            return tabla;
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            comando.Parameters.Clear();
+
+            conexion.CerrarConexion();
+
+            return ds;
 
         }
         public string InsertarEscuela(DEscuelas Escuela)

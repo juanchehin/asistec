@@ -19,7 +19,7 @@ namespace asistec.CapaPresentacion
     {
         LPersonal objetoCN = new LPersonal();
         LEscuelas objetoCL_asistencia = new LEscuelas();
-        private DataTable escuelas;
+        private DataSet escuelas;
         DataTable respuesta;
 
         private DataSet dtsTablas = new DataSet();

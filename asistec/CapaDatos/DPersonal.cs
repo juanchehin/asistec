@@ -54,13 +54,6 @@ namespace asistec.CapaDatos
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_listar_personal";
 
-            //MySqlCommand cmd = new MySqlCommand("<storedprocedure>", conn);
-            //cmd.CommandType = SqlCommandType.StoredProcedure;
-
-            //cmd.Parameters.AddWithValue("@param1", valor);
-
-            
-
             MySqlParameter desde = new MySqlParameter();
             desde.ParameterName = "@pDesde";
             desde.MySqlDbType = MySqlDbType.Int32;
@@ -71,10 +64,6 @@ namespace asistec.CapaDatos
             MySqlDataAdapter da = new MySqlDataAdapter(comando);
             DataSet ds = new DataSet();
             da.Fill(ds);
-
-            //tabla.Clear();
-            //leer = comando.ExecuteReader();
-            //tabla.Load(leer);
 
             comando.Parameters.Clear();
 
