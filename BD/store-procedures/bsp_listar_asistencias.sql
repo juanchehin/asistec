@@ -1,7 +1,7 @@
 DROP procedure IF EXISTS `bsp_listar_asistencias`;
 DELIMITER $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `bsp_listar_asistencias`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bsp_listar_asistencias`(in pDesde int)
 BEGIN 
 	/*
     Procedimiento que devuelve todo el personal de la BD
@@ -11,7 +11,8 @@ BEGIN
     FROM	personal p
     INNER JOIN asistencias a
     on p.IdPersonal = a.IdPersonal
-    GROUP BY p.IdPersonal;
+    GROUP BY p.IdPersonal
+    LIMIT 		pDesde,5;
 
 END$$
 DELIMITER ;

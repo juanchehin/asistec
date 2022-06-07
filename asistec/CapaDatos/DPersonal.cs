@@ -1,11 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
+using System.Data.SqlClient;
 
 namespace asistec.CapaDatos
 {
@@ -52,18 +48,39 @@ namespace asistec.CapaDatos
         MySqlCommand comando = new MySqlCommand();
 
 
-        public DataTable ListarPersonal()
+        public DataSet ListarPersonal(int pDesde)
         {
-
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_listar_personal";
 
-            tabla.Clear();
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
+            //MySqlCommand cmd = new MySqlCommand("<storedprocedure>", conn);
+            //cmd.CommandType = SqlCommandType.StoredProcedure;
+
+            //cmd.Parameters.AddWithValue("@param1", valor);
+
+            
+
+            MySqlParameter desde = new MySqlParameter();
+            desde.ParameterName = "@pDesde";
+            desde.MySqlDbType = MySqlDbType.Int32;
+            //pDesde.Size = 60;
+            desde.Value = pDesde;
+            comando.Parameters.Add(desde);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            //tabla.Clear();
+            //leer = comando.ExecuteReader();
+            //tabla.Load(leer);
+
+            comando.Parameters.Clear();
+
             conexion.CerrarConexion();
-            return tabla;
+
+            return ds;
 
         }
 

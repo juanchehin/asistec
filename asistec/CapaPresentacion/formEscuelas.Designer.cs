@@ -36,6 +36,8 @@
             this.btnAgregarEscuela = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoEscuelas)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             this.dataListadoEscuelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoEscuelas.Location = new System.Drawing.Point(121, 95);
             this.dataListadoEscuelas.Name = "dataListadoEscuelas";
-            this.dataListadoEscuelas.Size = new System.Drawing.Size(438, 334);
+            this.dataListadoEscuelas.Size = new System.Drawing.Size(540, 387);
             this.dataListadoEscuelas.TabIndex = 2;
             this.dataListadoEscuelas.SelectionChanged += new System.EventHandler(this.dataListadoEscuelas_SelectionChanged);
             // 
@@ -82,7 +84,7 @@
             // 
             // btnAgregarEscuela
             // 
-            this.btnAgregarEscuela.Location = new System.Drawing.Point(261, 69);
+            this.btnAgregarEscuela.Location = new System.Drawing.Point(434, 69);
             this.btnAgregarEscuela.Name = "btnAgregarEscuela";
             this.btnAgregarEscuela.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarEscuela.TabIndex = 1;
@@ -92,7 +94,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(342, 69);
+            this.btnEliminar.Location = new System.Drawing.Point(515, 69);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 2;
@@ -103,18 +105,40 @@
             // btnActualizar
             // 
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.Location = new System.Drawing.Point(521, 60);
+            this.btnActualizar.Location = new System.Drawing.Point(623, 61);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(38, 32);
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(586, 496);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.TabIndex = 5;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(505, 496);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.TabIndex = 6;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
             // formEscuelas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 450);
+            this.ClientSize = new System.Drawing.Size(673, 531);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregarEscuela);
@@ -141,5 +165,7 @@
         private System.Windows.Forms.Button btnAgregarEscuela;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
     }
 }

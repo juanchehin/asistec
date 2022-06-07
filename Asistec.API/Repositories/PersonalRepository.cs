@@ -1,26 +1,33 @@
 ﻿using asistec.CapaLogica;
 using Asistec.API.Entities;
+using Asistec.API.Data;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Asistec.API.Repositories
 {
-    public class PersonalRepository: IPersonalRepository
+    public class PersonalRepository : IPersonalRepository
     {
-        private readonly IConfiguration _configuration;
+        private MySqlConfiguration _connectionString;
 
-        public PersonalRepository(IConfiguration configuration)
+        public PersonalRepository(MySqlConfiguration connectionString)
         {
-            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _connectionString = connectionString;
         }
 
-        public Task? GetPersonal(int idPersonal)
+        protected MySqlConnection dbConnection()
         {
-            string rpta;
+            return new MySqlConnection("Server=localhost;Port=3306;Database=asistec;User Id=root;Password=;");
+        }
 
-            LPersonal lpersonal = new LPersonal();
+        public async Task? GetPersonal(int idPersonal)
+        {
+            //var db = dbConnection();
 
-            lpersonal.DamePersonal(idPersonal);
+            //var sql = @"SELECT * from personal";
 
-            return null;
+            //return await db.OpenAsync();
+
         }
 
         public async Task<bool> CreatePersonal(Personal personal)

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Asistec.API.Data;
 
 namespace Asistec.API
 {
@@ -26,7 +27,10 @@ namespace Asistec.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPersonalRepository, PersonalRepository>();
+            //services.AddScoped<IPersonalRepository, PersonalRepository>();
+
+            var mySQLConnectionConfig = new MySQLConfiguration(Configuration.GetConnectionString("MySqlConnection"));
+            services.AddSingleton(mySQLConnectionConfig);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

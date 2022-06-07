@@ -16,11 +16,10 @@ namespace asistec.CapaLogica
         public string Escuela { get; set; }
         public string Observaciones { get; set; }
 
-        public DataTable ListarEscuelas()
+        public DataTable ListarEscuelas(int pDesde)
         {
-
             DataTable tablaEscuelas = new DataTable();
-            tablaEscuelas = objetoCD.ListarEscuelas();
+            tablaEscuelas = objetoCD.ListarEscuelas(pDesde);
             return tablaEscuelas;
         }
         //Método Insertar que llama al método Insertar de la clase

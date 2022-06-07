@@ -82,7 +82,7 @@ namespace asistec.CapaPresentacion
         }
         private void cargarEscuelas()
         {
-            escuelas = objetoCL_asistencia.ListarEscuelas();
+            escuelas = objetoCL_asistencia.ListarEscuelas(0);
 
             cbEscuela.DataSource = escuelas;
 

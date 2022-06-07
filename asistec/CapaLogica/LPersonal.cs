@@ -26,11 +26,11 @@ namespace asistec.CapaLogica
             return Obj.InsertarPersonal(Obj);
         }
 
-        public DataTable ListarPersonal()
+        public DataSet ListarPersonal(int pDesde)
         {
 
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.ListarPersonal();
+            DataSet tabla = new DataSet();
+            tabla = objetoCD.ListarPersonal(pDesde);
             return tabla;
         }
         public static string EliminarPersonal(int IdPersonal)
@@ -43,11 +43,8 @@ namespace asistec.CapaLogica
         // Devuelve solo un Personal
         public DataTable DamePersonal(int IdPersonal)
         {
-
             DataTable tabla = new DataTable();
             tabla = objetoCD.DamePersonal(IdPersonal);
-            Console.WriteLine("tabla TableName en capa negocio es : " + tabla.TableName);
-            Console.WriteLine("tabla Rows en capa negocio es : " + tabla.Rows);
             return tabla;
         }
 

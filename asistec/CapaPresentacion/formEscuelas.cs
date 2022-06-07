@@ -16,24 +16,27 @@ namespace asistec.CapaPresentacion
     {
         LEscuelas objetoCN = new LEscuelas();
         private int IdEscuela;
+        int desde = 0;
+        int totalEscuelas = 0;
         public formEscuelas()
         {
             InitializeComponent();
-            ListarEscuelas();
+            ListarEscuelas(0);
         }
 
-        public void ListarEscuelas()
+        public void ListarEscuelas(int pDesde)
         {
             // Console.WriteLine("Ahora va el mostrar productos");
-            dataListadoEscuelas.DataSource = objetoCN.ListarEscuelas();
+            dataListadoEscuelas.DataSource = objetoCN.ListarEscuelas(pDesde);
             dataListadoEscuelas.Columns[0].Visible = false;
             lblTotalEscuelas.Text = Convert.ToString(dataListadoEscuelas.Rows.Count);
+            totalEscuelas = dataListadoEscuelas.Rows.Count;
             // this.banderaFormularioHijo = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ListarEscuelas();
+            ListarEscuelas(0);
         }
 
         private void btnAgregarEscuela_Click(object sender, EventArgs e)
@@ -62,7 +65,7 @@ namespace asistec.CapaPresentacion
                     {
                         this.MensajeError(rpta);
                     }
-                    this.ListarEscuelas();
+                    this.ListarEscuelas(0);
                 }
 
             }
@@ -90,6 +93,42 @@ namespace asistec.CapaPresentacion
                 DataGridViewRow selectedRow = dataListadoEscuelas.Rows[selectedrowindex];
                 this.IdEscuela = Convert.ToInt32(selectedRow.Cells["IdEscuela"].Value);
             }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            this.desde = this.desde - 15;
+
+            if (desde >= this.totalEscuelas)
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                return;
+            }
+
+            //this.desde += valor;
+            this.ListarEscuelas(this.desde);
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            this.desde = this.desde + 15;
+
+            if (desde >= this.totalEscuelas)
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                return;
+            }
+
+            //this.desde += valor;
+            this.ListarEscuelas(this.desde);
         }
     }
 }

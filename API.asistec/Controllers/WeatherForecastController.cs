@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Asistec.API.Controllers
+namespace API.asistec.Controllers
 {
     [ApiController]
     [Route("[controller]")]

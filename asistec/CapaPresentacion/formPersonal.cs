@@ -1,6 +1,6 @@
 ﻿using asistec.CapaLogica;
-using asistec.CapaLogica;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace asistec.CapaPresentacion
@@ -9,12 +9,16 @@ namespace asistec.CapaPresentacion
     {
         LPersonal objetoCL = new LPersonal();
         int DNI;
+        int desde = 0;
+        string totalPersonal ;
+        int totalPersonalCambiar = 0;
         string rpta;
         private int IdPersonal;
+        DataSet ds = new DataSet();
         public formPersonal()
         {
             InitializeComponent();
-            ListarPersonal();
+            ListarPersonal(0);
         }
 
         private void btnNuevoPersonal_Click(object sender, EventArgs e)
@@ -23,16 +27,22 @@ namespace asistec.CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
-        public void ListarPersonal()
+        public void ListarPersonal(int pDesde)
         {
-            dataListadoPersonal.DataSource = objetoCL.ListarPersonal();
-            dataListadoPersonal.Columns[0].Visible = false;
-            lblTotalPersonal.Text = Convert.ToString(dataListadoPersonal.Rows.Count);
+            ds = objetoCL.ListarPersonal(pDesde);
+            dataListadoPersonal.DataSource = ds.Tables[0];
+            totalPersonal = ds.Tables[1].Rows[0][0].ToString();
+
+
+            //dataListadoPersonal.DataSource.Visible = false;
+
+            lblTotalPersonal.Text = totalPersonal;
+            totalPersonalCambiar = dataListadoPersonal.Rows.Count;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ListarPersonal();
+            ListarPersonal(0);
             this.txtDNI.Clear();
         }
 
@@ -135,7 +145,7 @@ namespace asistec.CapaPresentacion
                     {
                         this.MensajeError(rpta);
                     }
-                    this.ListarPersonal();
+                    this.ListarPersonal(0);
                 }
 
             }
@@ -143,6 +153,43 @@ namespace asistec.CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            this.desde = this.desde + 15;
+
+            if (desde >= this.totalPersonalCambiar)
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                return;
+            }
+
+            //this.desde += valor;
+            this.ListarPersonal(this.desde);
+
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            this.desde = this.desde - 15;
+
+            if (desde >= this.totalPersonalCambiar)
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                return;
+            }
+
+            //this.desde += valor;
+            this.ListarPersonal(this.desde);
         }
     }
 }
