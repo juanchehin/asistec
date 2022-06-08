@@ -10,8 +10,7 @@ namespace asistec.CapaPresentacion
         LPersonal objetoCL = new LPersonal();
         int DNI;
         int desde = 0;
-        string totalPersonal ;
-        int totalPersonalCambiar = 0;
+        string totalPersonal;
         string rpta;
         private int IdPersonal;
         DataSet ds = new DataSet();
@@ -32,12 +31,7 @@ namespace asistec.CapaPresentacion
             ds = objetoCL.ListarPersonal(pDesde);
             dataListadoPersonal.DataSource = ds.Tables[0];
             totalPersonal = ds.Tables[1].Rows[0][0].ToString();
-
-
-            //dataListadoPersonal.DataSource.Visible = false;
-
             lblTotalPersonal.Text = totalPersonal;
-            totalPersonalCambiar = Convert.ToInt32(totalPersonal);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -157,9 +151,7 @@ namespace asistec.CapaPresentacion
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            this.desde = this.desde + 10;
-
-            if (desde >= this.totalPersonalCambiar)
+            if ((desde + 10) >= Convert.ToInt32(totalPersonal))
             {
                 return;
             }
@@ -169,26 +161,19 @@ namespace asistec.CapaPresentacion
                 return;
             }
 
-            //this.desde += valor;
+            this.desde += 10;
             this.ListarPersonal(this.desde);
-
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            this.desde = this.desde - 10;
-
-            if (desde >= this.totalPersonalCambiar)
+            if (desde <= 0)
             {
+                this.desde = 0;
                 return;
             }
-
-            if (desde < 0)
-            {
-                return;
-            }
-
-            //this.desde += valor;
+            //this.desde = this.desde - 10;
+            this.desde -= 10;
             this.ListarPersonal(this.desde);
         }
     }

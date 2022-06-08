@@ -55,7 +55,7 @@
             this.dataListadoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoPersonal.Location = new System.Drawing.Point(118, 63);
             this.dataListadoPersonal.Name = "dataListadoPersonal";
-            this.dataListadoPersonal.Size = new System.Drawing.Size(661, 476);
+            this.dataListadoPersonal.Size = new System.Drawing.Size(661, 350);
             this.dataListadoPersonal.TabIndex = 2;
             this.dataListadoPersonal.SelectionChanged += new System.EventHandler(this.dataListadoPersonal_SelectionChanged);
             // 
@@ -158,7 +158,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(691, 557);
+            this.btnSiguiente.Location = new System.Drawing.Point(704, 419);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 12;
@@ -168,7 +168,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(589, 556);
+            this.btnAnterior.Location = new System.Drawing.Point(602, 418);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 592);
+            this.ClientSize = new System.Drawing.Size(802, 456);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnEliminar);
