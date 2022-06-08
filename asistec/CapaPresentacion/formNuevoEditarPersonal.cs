@@ -23,6 +23,7 @@ namespace asistec.CapaPresentacion
         DataTable respuesta;
 
         private DataSet dtsTablas = new DataSet();
+        private DataTable dt = new DataTable();
         // int parametroActual;
         bool bandera;
         bool IsNuevo = true;
@@ -84,7 +85,9 @@ namespace asistec.CapaPresentacion
         {
             escuelas = objetoCL_asistencia.ListarEscuelas(0);
 
-            cbEscuela.DataSource = escuelas;
+            dt = escuelas.Tables[0];
+
+            cbEscuela.DataSource = dt;
 
             cbEscuela.DisplayMember = "Escuela";
             cbEscuela.ValueMember = "IdEscuela";
