@@ -180,6 +180,12 @@
     <Compile Include="CapaPresentacion\formCargando.Designer.cs">
       <DependentUpon>formCargando.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\formConfiguraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formConfiguraciones.Designer.cs">
+      <DependentUpon>formConfiguraciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\formEscuelas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formCargando.resx">
       <DependentUpon>formCargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formConfiguraciones.resx">
+      <DependentUpon>formConfiguraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formEscuelas.resx">
       <DependentUpon>formEscuelas.cs</DependentUpon>

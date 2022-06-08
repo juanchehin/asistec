@@ -66,5 +66,12 @@ namespace asistec.CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnConfiguraciones_Click(object sender, EventArgs e)
+        {
+            formConfiguraciones frm = new formConfiguraciones();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

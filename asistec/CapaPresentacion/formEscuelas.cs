@@ -1,13 +1,6 @@
 ﻿using asistec.CapaLogica;
-using asistec.CapaPresentacion;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace asistec.CapaPresentacion
@@ -93,7 +86,6 @@ namespace asistec.CapaPresentacion
                 this.IdEscuela = Convert.ToInt32(selectedRow.Cells["IdEscuela"].Value);
             }
         }
-
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
