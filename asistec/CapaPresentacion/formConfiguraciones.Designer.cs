@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConfiguraciones));
             this.label7 = new System.Windows.Forms.Label();
-            this.btnConfiguraciones = new System.Windows.Forms.Button();
+            this.btnBackEnd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -45,14 +45,15 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Ejecutar backend";
             // 
-            // btnConfiguraciones
+            // btnBackEnd
             // 
-            this.btnConfiguraciones.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguraciones.Image")));
-            this.btnConfiguraciones.Location = new System.Drawing.Point(12, 12);
-            this.btnConfiguraciones.Name = "btnConfiguraciones";
-            this.btnConfiguraciones.Size = new System.Drawing.Size(173, 157);
-            this.btnConfiguraciones.TabIndex = 15;
-            this.btnConfiguraciones.UseVisualStyleBackColor = true;
+            this.btnBackEnd.Image = ((System.Drawing.Image)(resources.GetObject("btnBackEnd.Image")));
+            this.btnBackEnd.Location = new System.Drawing.Point(12, 12);
+            this.btnBackEnd.Name = "btnBackEnd";
+            this.btnBackEnd.Size = new System.Drawing.Size(173, 157);
+            this.btnBackEnd.TabIndex = 15;
+            this.btnBackEnd.UseVisualStyleBackColor = true;
+            this.btnBackEnd.Click += new System.EventHandler(this.btnBackEnd_Click);
             // 
             // label1
             // 
@@ -64,14 +65,15 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Obtener IP";
             // 
-            // button1
+            // btnIP
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(191, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 157);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIP.Image = ((System.Drawing.Image)(resources.GetObject("btnIP.Image")));
+            this.btnIP.Location = new System.Drawing.Point(191, 12);
+            this.btnIP.Name = "btnIP";
+            this.btnIP.Size = new System.Drawing.Size(173, 157);
+            this.btnIP.TabIndex = 17;
+            this.btnIP.UseVisualStyleBackColor = true;
+            this.btnIP.Click += new System.EventHandler(this.btnIP_Click);
             // 
             // formConfiguraciones
             // 
@@ -79,9 +81,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIP);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnConfiguraciones);
+            this.Controls.Add(this.btnBackEnd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formConfiguraciones";
             this.Text = "Configuraciones";
@@ -93,8 +95,8 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnConfiguraciones;
+        private System.Windows.Forms.Button btnBackEnd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIP;
     }
 }

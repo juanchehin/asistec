@@ -16,5 +16,19 @@ namespace asistec.CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnIP_Click(object sender, EventArgs e)
+        {
+            formIP frm = new formIP();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnBackEnd_Click(object sender, EventArgs e)
+        {
+            formCargando frm = new formCargando();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

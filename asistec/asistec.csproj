@@ -198,6 +198,12 @@
     <Compile Include="CapaPresentacion\formInicio.Designer.cs">
       <DependentUpon>formInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\formIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formIP.Designer.cs">
+      <DependentUpon>formIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\formNuevaEditarEscuela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formInicio.resx">
       <DependentUpon>formInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formIP.resx">
+      <DependentUpon>formIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formNuevaEditarEscuela.resx">
       <DependentUpon>formNuevaEditarEscuela.cs</DependentUpon>
