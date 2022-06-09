@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace asistec.CapaPresentacion
@@ -29,6 +27,19 @@ namespace asistec.CapaPresentacion
             formCargando frm = new formCargando();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+            Thread.Sleep(3000);
+
+            try
+            {
+                Process.Start("C:\\asistec.exe");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Ocurrio un problema, contactese con el administrador");
+                MessageBox.Show("Chequee que exista asistec.exe en la ruta C:\\");
+            }
+            frm.Close();
         }
     }
 }
