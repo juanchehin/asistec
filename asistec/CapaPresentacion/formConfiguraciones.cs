@@ -10,6 +10,7 @@ namespace asistec.CapaPresentacion
 {
     public partial class formConfiguraciones : Form
     {
+        string archivoSeleccionado;
         public formConfiguraciones()
         {
             InitializeComponent();
@@ -24,22 +25,27 @@ namespace asistec.CapaPresentacion
 
         private void btnBackEnd_Click(object sender, EventArgs e)
         {
-            formCargando frm = new formCargando();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-            Thread.Sleep(3000);
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "File (*.exe)|*.exe";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.archivoSeleccionado = openFileDialog1.FileName;
+            }
 
             try
             {
-                Process.Start("C:\\asistec.exe");
+                Process.Start(this.archivoSeleccionado);
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,"Ocurrio un problema, contactese con el administrador");
-                MessageBox.Show("Chequee que exista asistec.exe en la ruta C:\\");
             }
-            frm.Close();
         }
     }
 }
