@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formIP));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbIP = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbIP = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,25 +49,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Direccion IP";
             // 
-            // btnAceptar
+            // label2
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(349, 185);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "La direccion IP de su PC es : ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(265, 39);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Use esta direccion IP para colocarla en la aplicacion.\r\nRecuerde que la aplicacio" +
+    "n y la PC deben encontrarse\r\nen la misma red.";
             // 
             // lbIP
             // 
@@ -79,14 +69,25 @@
             this.lbIP.TabIndex = 1;
             this.lbIP.Text = "0.0.0.0";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Use esta direccion IP para colocarla en la aplicacion";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "La direccion IP de su PC es : ";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(349, 185);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // formIP
             // 
