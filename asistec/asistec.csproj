@@ -153,9 +153,11 @@
     <Compile Include="CapaDatos\DConexion.cs" />
     <Compile Include="CapaDatos\DEscuelas.cs" />
     <Compile Include="CapaDatos\DPersonal.cs" />
+    <Compile Include="CapaDatos\DUsuarios.cs" />
     <Compile Include="CapaLogica\LAsistencias.cs" />
     <Compile Include="CapaLogica\LEscuelas.cs" />
     <Compile Include="CapaLogica\LPersonal.cs" />
+    <Compile Include="CapaLogica\LUsuarios.cs" />
     <Compile Include="CapaPresentacion\formAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +206,12 @@
     <Compile Include="CapaPresentacion\formIP.Designer.cs">
       <DependentUpon>formIP.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\formNuevaEditarEscuela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formIP.resx">
       <DependentUpon>formIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\formNuevaEditarEscuela.resx">
       <DependentUpon>formNuevaEditarEscuela.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace asistec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formInicio());
+            Application.Run(new formLogin());
         }
     }
 }
