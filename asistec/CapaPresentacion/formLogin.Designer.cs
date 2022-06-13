@@ -156,7 +156,7 @@
             this.Controls.Add(this.btnAyuda);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formLogin";
-            this.Text = "formLogin";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
