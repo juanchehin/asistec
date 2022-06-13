@@ -54,12 +54,9 @@ namespace asistec.CapaDatos
         // ==================================================
         private DConexion conexion = new DConexion();
 
-        MySqlDataReader leer;
-        DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
-        List<string> categorias = new List<string>();
 
-        public DataTable ListarAsistencias(DateTime Fecha)
+        public DataSet ListarAsistencias(DateTime Fecha, int pDesde)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
@@ -75,11 +72,21 @@ namespace asistec.CapaDatos
             pFecha.Value = Fecha;
             comando.Parameters.Add(pFecha);
 
-            tabla.Clear();
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
+            MySqlParameter desde = new MySqlParameter();
+            desde.ParameterName = "@pDesde";
+            desde.MySqlDbType = MySqlDbType.Int32;
+            // pIdProducto.Size = 60;
+            desde.Value = pDesde;
+            comando.Parameters.Add(desde);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            comando.Parameters.Clear();
             conexion.CerrarConexion();
-            return tabla;
+            
+            return ds;
 
         }
 

@@ -36,6 +36,8 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblTotalAsistencias = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoAsistencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@
             this.dataListadoAsistencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoAsistencias.Location = new System.Drawing.Point(148, 97);
             this.dataListadoAsistencias.Name = "dataListadoAsistencias";
-            this.dataListadoAsistencias.Size = new System.Drawing.Size(1102, 485);
+            this.dataListadoAsistencias.Size = new System.Drawing.Size(1102, 449);
             this.dataListadoAsistencias.TabIndex = 0;
             // 
             // pictureBox1
@@ -109,11 +111,33 @@
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(1157, 559);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(93, 23);
+            this.btnSiguiente.TabIndex = 7;
+            this.btnSiguiente.Text = "Siguiente >>";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(1050, 559);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(85, 23);
+            this.btnAnterior.TabIndex = 8;
+            this.btnAnterior.Text = "<< Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
             // formAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 594);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.lblTotalAsistencias);
             this.Controls.Add(this.dtpFecha);
@@ -141,5 +165,7 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblTotalAsistencias;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
     }
 }

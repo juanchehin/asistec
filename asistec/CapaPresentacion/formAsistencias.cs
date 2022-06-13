@@ -1,6 +1,7 @@
 ﻿using asistec.CapaLogica;
 using SpreadsheetLight;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace asistec.CapaPresentacion
@@ -9,25 +10,32 @@ namespace asistec.CapaPresentacion
     {
         LAsistencias objetoCL = new LAsistencias();
         private DateTime Fecha = DateTime.Today; // Fecha actual
+        int desde = 0;
+        string totalAsistencias;
+        DataSet ds = new DataSet();
 
         public formAsistencias()
         {
             InitializeComponent();
-            ListarAsistencias(DateTime.Today);
+            ListarAsistencias(0);
             this.Fecha = dtpFecha.Value;
-            ListarAsistencias(this.Fecha);
+            ListarAsistencias(0);
         }
 
-        public void ListarAsistencias(DateTime Fecha)
+        public void ListarAsistencias(int pDesde)
         {
-            dataListadoAsistencias.DataSource = objetoCL.ListarAsistencias(dtpFecha.Value.Date);
-            dataListadoAsistencias.Columns[0].Visible = false;
-            lblTotalAsistencias.Text = Convert.ToString(dataListadoAsistencias.Rows.Count);
+            //dataListadoAsistencias.DataSource = objetoCL.ListarAsistencias(dtpFecha.Value.Date,pDesde);
+            //dataListadoAsistencias.Columns[0].Visible = false;
+            //lblTotalAsistencias.Text = Convert.ToString(dataListadoAsistencias.Rows.Count);
+            ds = objetoCL.ListarAsistencias(dtpFecha.Value.Date, pDesde);
+            dataListadoAsistencias.DataSource = ds.Tables[0];
+            totalAsistencias = ds.Tables[1].Rows[0][0].ToString();
+            lblTotalAsistencias.Text = totalAsistencias;
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-            ListarAsistencias(dtpFecha.Value.Date);
+            ListarAsistencias(this.desde);
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -85,6 +93,35 @@ namespace asistec.CapaPresentacion
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            
+            if (desde >= Convert.ToInt32(totalAsistencias))
+            {
+                return;
+            }
+
+            if (desde < 0)
+            {
+                this.desde = 0;
+                return;
+            }
+
+            this.desde += 15;
+            this.ListarAsistencias(this.desde);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            this.desde -= 15;
+            if (desde <= 0)
+            {
+                this.desde = 0;
+            }
+            
+            this.ListarAsistencias( this.desde);
         }
     }
 }

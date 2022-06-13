@@ -12,10 +12,13 @@ namespace asistec.CapaLogica
     {
         private DAsistencias objetoCD = new DAsistencias();
 
-        public DataTable ListarAsistencias(DateTime pFecha)
+        public DataSet ListarAsistencias(DateTime pFecha,int pDesde)
         {
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.ListarAsistencias(pFecha);
+            //DataTable tabla = new DataTable();
+            //tabla = objetoCD.ListarAsistencias(pFecha,pDesde);
+            //return tabla;
+            DataSet tabla = new DataSet();
+            tabla = objetoCD.ListarAsistencias(pFecha,pDesde);
             return tabla;
         }
 
