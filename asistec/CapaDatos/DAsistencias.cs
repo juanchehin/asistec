@@ -114,7 +114,7 @@ namespace asistec.CapaDatos
                 pObservaciones.Value = Asistencia.Observaciones;
                 comando.Parameters.Add(pObservaciones);
 
-                rpta = comando.ExecuteScalar().ToString() == "OK" ? "OK" : "No se ingreso el Registro";
+                rpta = comando.ExecuteScalar().ToString();
                 comando.Parameters.Clear();
 
             }
