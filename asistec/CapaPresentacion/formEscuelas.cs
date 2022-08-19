@@ -15,12 +15,12 @@ namespace asistec.CapaPresentacion
         public formEscuelas()
         {
             InitializeComponent();
-            ListarEscuelas(0);
+            ListarEscuelasPaginado(0);
         }
 
-        public void ListarEscuelas(int pDesde)
+        public void ListarEscuelasPaginado(int pDesde)
         {
-            ds = objetoCL.ListarEscuelas(pDesde);
+            ds = objetoCL.ListarEscuelasPaginado(pDesde);
             dataListadoEscuelas.DataSource = ds.Tables[0];
             totalEscuelas = ds.Tables[1].Rows[0][0].ToString();
             lblTotalEscuelas.Text = totalEscuelas;
@@ -28,7 +28,7 @@ namespace asistec.CapaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ListarEscuelas(0);
+            ListarEscuelasPaginado(0);
         }
 
         private void btnAgregarEscuela_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace asistec.CapaPresentacion
                     {
                         this.MensajeError(rpta);
                     }
-                    this.ListarEscuelas(0);
+                    this.ListarEscuelasPaginado(0);
                 }
 
             }
@@ -101,7 +101,7 @@ namespace asistec.CapaPresentacion
 
             //this.desde = this.desde + 10;
             this.desde += 10;
-            this.ListarEscuelas(this.desde);
+            this.ListarEscuelasPaginado(this.desde);
         }
         private void btnAnterior_Click(object sender, EventArgs e)
         {
@@ -112,7 +112,7 @@ namespace asistec.CapaPresentacion
             }
             //this.desde = this.desde - 10;
             this.desde -= 10;
-            this.ListarEscuelas(this.desde);
+            this.ListarEscuelasPaginado(this.desde);
         }
 
     }

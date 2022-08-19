@@ -38,11 +38,29 @@ namespace asistec.CapaDatos
         DataTable tabla = new DataTable();
         MySqlCommand comando = new MySqlCommand();
 
-        public DataSet ListarEscuelas(int pDesde)
+        public DataSet ListarEscuelas()
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "bsp_listar_escuelas";
+
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            comando.Parameters.Clear();
+
+            conexion.CerrarConexion();
+
+            return ds;
+
+        }
+
+        public DataSet ListarEscuelasPaginado(int pDesde)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "bsp_listar_escuelas_paginado";
 
             MySqlParameter desde = new MySqlParameter();
             desde.ParameterName = "@pDesde";

@@ -73,5 +73,10 @@ namespace asistec.CapaPresentacion
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void formInicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

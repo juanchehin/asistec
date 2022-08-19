@@ -83,7 +83,7 @@ namespace asistec.CapaPresentacion
         }
         private void cargarEscuelas()
         {
-            escuelas = objetoCL_asistencia.ListarEscuelas(0);
+            escuelas = objetoCL_asistencia.ListarEscuelas();
 
             dt = escuelas.Tables[0];
 

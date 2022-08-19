@@ -245,6 +245,7 @@
             this.MaximizeBox = false;
             this.Name = "formInicio";
             this.Text = "Asistencias - asistec";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formInicio_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

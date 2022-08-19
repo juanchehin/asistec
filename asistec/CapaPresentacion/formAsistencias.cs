@@ -24,13 +24,21 @@ namespace asistec.CapaPresentacion
 
         public void ListarAsistencias(int pDesde)
         {
-            //dataListadoAsistencias.DataSource = objetoCL.ListarAsistencias(dtpFecha.Value.Date,pDesde);
-            //dataListadoAsistencias.Columns[0].Visible = false;
-            //lblTotalAsistencias.Text = Convert.ToString(dataListadoAsistencias.Rows.Count);
-            ds = objetoCL.ListarAsistencias(dtpFecha.Value.Date, pDesde);
-            dataListadoAsistencias.DataSource = ds.Tables[0];
-            totalAsistencias = ds.Tables[1].Rows[0][0].ToString();
-            lblTotalAsistencias.Text = totalAsistencias;
+            try
+            {
+                ds = objetoCL.ListarAsistencias(dtpFecha.Value.Date, pDesde);
+                dataListadoAsistencias.DataSource = ds.Tables[0];
+                totalAsistencias = ds.Tables[1].Rows[0][0].ToString();
+                lblTotalAsistencias.Text = totalAsistencias;
+            }
+            catch
+            {
+                //ds = objetoCL.ListarAsistencias(dtpFecha.Value.Date, pDesde);
+                //dataListadoAsistencias.DataSource = ds.Tables[0];
+                totalAsistencias = "0";
+                lblTotalAsistencias.Text = totalAsistencias;
+            }
+            
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
