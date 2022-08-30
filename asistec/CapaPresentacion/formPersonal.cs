@@ -32,6 +32,8 @@ namespace asistec.CapaPresentacion
             dataListadoPersonal.DataSource = ds.Tables[0];
             totalPersonal = ds.Tables[1].Rows[0][0].ToString();
             lblTotalPersonal.Text = totalPersonal;
+            DataGridViewColumn column = dataListadoPersonal.Columns[6];
+            column.Width = 180;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -151,7 +153,7 @@ namespace asistec.CapaPresentacion
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if ((desde + 10) >= Convert.ToInt32(totalPersonal))
+            if ((desde + 20) >= Convert.ToInt32(totalPersonal))
             {
                 return;
             }
@@ -161,7 +163,7 @@ namespace asistec.CapaPresentacion
                 return;
             }
 
-            this.desde += 10;
+            this.desde += 20;
             this.ListarPersonal(this.desde);
         }
 
@@ -173,7 +175,7 @@ namespace asistec.CapaPresentacion
                 return;
             }
             //this.desde = this.desde - 10;
-            this.desde -= 10;
+            this.desde -= 20;
             this.ListarPersonal(this.desde);
         }
     }

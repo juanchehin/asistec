@@ -12,9 +12,9 @@ namespace asistec.CapaLogica
         public string Escuela { get; set; }
         public string Apellidos { get; set; }
         public string Nombres { get; set; }
-        public int DNI { get; set; }
+        public string DNI { get; set; }
 
-        public static string InsertarPersonal(int DNI,string Escuela,string Apellidos, string Nombres, string Observaciones)
+        public static string InsertarPersonal(string DNI,string Escuela,string Apellidos, string Nombres, string Observaciones)
         {
             DPersonal Obj = new DPersonal();
             Obj.DNI = DNI;
@@ -48,7 +48,7 @@ namespace asistec.CapaLogica
             return tabla;
         }
 
-        public static string EditarPersonal(int IdPersonal,int DNI, string Apellidos, string Nombres, string Observaciones)
+        public static string EditarPersonal(int IdPersonal, string DNI, string Apellidos, string Nombres, string Observaciones)
         {
 
             DPersonal Obj = new DPersonal();

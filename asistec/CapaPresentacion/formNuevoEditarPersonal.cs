@@ -51,11 +51,11 @@ namespace asistec.CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = LPersonal.InsertarPersonal(Convert.ToInt32(this.txtDNI.Text.Trim()),this.cbEscuela.Text, this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
+                        rpta = LPersonal.InsertarPersonal(this.txtDNI.Text.Trim(),this.cbEscuela.Text, this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
                     }
                     else
                     {
-                        rpta = LPersonal.EditarPersonal(this.IdPersonal, Convert.ToInt32(this.txtDNI), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
+                        rpta = LPersonal.EditarPersonal(this.IdPersonal, this.txtDNI.Text.Trim(), this.txtApellidos.Text.Trim(), this.txtNombres.Text.Trim(), this.txtObservaciones.Text.Trim());
                     }
 
                     if (rpta.Equals("OK"))
@@ -111,7 +111,9 @@ namespace asistec.CapaPresentacion
             // cargando page = new cargando();
             // frm.MdiParent = this.MdiParent;
             // page.Show();
-            
+            try
+            {
+
             //configuracion de ventana para seleccionar un archivo
             OpenFileDialog oOpenFileDialog = new OpenFileDialog();
             oOpenFileDialog.Filter = "Excel Worbook|*.xlsx";
@@ -153,7 +155,7 @@ namespace asistec.CapaPresentacion
                         string Observaciones = dt.Rows[i][j].ToString();
                         j = j+1;
 
-                        rpta = LPersonal.InsertarPersonal(Convert.ToInt32(DNI.Trim()), Escuela.Trim(), Apellidos.Trim(), Nombres.Trim(), Observaciones.Trim());
+                        rpta = LPersonal.InsertarPersonal(DNI.Trim(), Escuela.Trim(), Apellidos.Trim(), Nombres.Trim(), Observaciones.Trim());
                         
                         if(rpta == "Ok" || rpta == "OK")
                         {
@@ -165,6 +167,13 @@ namespace asistec.CapaPresentacion
 
                 page.Dispose();
                 MensajeOk("Se cargaron " + regCargados + " registros en la Base de datos");
+            }
+
+
+            }
+            catch(Exception ex)
+            {
+                MensajeError(ex.Message);
             }
         }
 

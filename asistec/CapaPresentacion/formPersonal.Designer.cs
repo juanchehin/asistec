@@ -55,13 +55,13 @@
             this.dataListadoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListadoPersonal.Location = new System.Drawing.Point(118, 63);
             this.dataListadoPersonal.Name = "dataListadoPersonal";
-            this.dataListadoPersonal.Size = new System.Drawing.Size(661, 350);
+            this.dataListadoPersonal.Size = new System.Drawing.Size(803, 428);
             this.dataListadoPersonal.TabIndex = 2;
             this.dataListadoPersonal.SelectionChanged += new System.EventHandler(this.dataListadoPersonal_SelectionChanged);
             // 
             // btnNuevoPersonal
             // 
-            this.btnNuevoPersonal.Location = new System.Drawing.Point(422, 6);
+            this.btnNuevoPersonal.Location = new System.Drawing.Point(565, 6);
             this.btnNuevoPersonal.Name = "btnNuevoPersonal";
             this.btnNuevoPersonal.Size = new System.Drawing.Size(99, 31);
             this.btnNuevoPersonal.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(615, 40);
+            this.label1.Location = new System.Drawing.Point(758, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             this.lblTotalPersonal.AutoSize = true;
             this.lblTotalPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPersonal.Location = new System.Drawing.Point(757, 40);
+            this.lblTotalPersonal.Location = new System.Drawing.Point(900, 40);
             this.lblTotalPersonal.Name = "lblTotalPersonal";
             this.lblTotalPersonal.Size = new System.Drawing.Size(18, 20);
             this.lblTotalPersonal.TabIndex = 5;
@@ -102,7 +102,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.Location = new System.Drawing.Point(741, 6);
+            this.btnActualizar.Location = new System.Drawing.Point(884, 6);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(34, 31);
             this.btnActualizar.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             // btnMarcarAsistencia
             // 
-            this.btnMarcarAsistencia.Location = new System.Drawing.Point(527, 6);
+            this.btnMarcarAsistencia.Location = new System.Drawing.Point(670, 6);
             this.btnMarcarAsistencia.Name = "btnMarcarAsistencia";
             this.btnMarcarAsistencia.Size = new System.Drawing.Size(103, 31);
             this.btnMarcarAsistencia.TabIndex = 4;
@@ -148,7 +148,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(636, 6);
+            this.btnEliminar.Location = new System.Drawing.Point(779, 6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(99, 31);
             this.btnEliminar.TabIndex = 11;
@@ -158,7 +158,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(704, 419);
+            this.btnSiguiente.Location = new System.Drawing.Point(846, 498);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 12;
@@ -168,7 +168,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(602, 418);
+            this.btnAnterior.Location = new System.Drawing.Point(744, 497);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(75, 23);
             this.btnAnterior.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 456);
+            this.ClientSize = new System.Drawing.Size(933, 533);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnEliminar);

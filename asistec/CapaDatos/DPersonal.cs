@@ -11,7 +11,7 @@ namespace asistec.CapaDatos
         private string _Escuela;
         private string _Apellidos;
         private string _Nombres;
-        private int _DNI;
+        private string _DNI;
         private string _Observaciones;
 
         private string _TextoBuscar;
@@ -21,7 +21,7 @@ namespace asistec.CapaDatos
         public string Escuela { get => _Escuela; set => _Escuela = value; }
         public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
         public string Nombres { get => _Nombres; set => _Nombres = value; }
-        public int DNI { get => _DNI; set => _DNI = value; }
+        public string DNI { get => _DNI; set => _DNI = value; }
         public string Observaciones { get => _Observaciones; set => _Observaciones = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
 
@@ -31,7 +31,7 @@ namespace asistec.CapaDatos
 
         }
 
-        public DPersonal(int IdPersonal, string Escuela, int DNI, string Apellidos, string Nombres, string Observaciones)
+        public DPersonal(int IdPersonal, string Escuela, string DNI, string Apellidos, string Nombres, string Observaciones)
         {
             this.IdPersonal = IdPersonal;
             this.Escuela = Escuela;
@@ -188,6 +188,13 @@ namespace asistec.CapaDatos
                 pEscuela.Size = 60;
                 pEscuela.Value = Personal.Escuela;
                 comando.Parameters.Add(pEscuela);
+
+                MySqlParameter pObservaciones = new MySqlParameter();
+                pObservaciones.ParameterName = "@pObservaciones";
+                pObservaciones.MySqlDbType = MySqlDbType.VarChar;
+                pObservaciones.Size = 250;
+                pObservaciones.Value = Personal.Observaciones;
+                comando.Parameters.Add(pObservaciones);
 
 
                 rpta = comando.ExecuteScalar().ToString();
