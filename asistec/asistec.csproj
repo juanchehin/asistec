@@ -27,7 +27,7 @@
     <ProductName>asistec</ProductName>
     <PublisherName>Chehin Juan Martin</PublisherName>
     <SuiteName>asistec</SuiteName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
