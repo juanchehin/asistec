@@ -38,5 +38,25 @@ namespace asistec.CapaPresentacion
 
             }
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                string Datos = LUsuarios.Login(this.txtUsuario.Text, this.txtPassword.Text);
+                //Evaluar si existe el Usuario
+                if (Datos != "Ok")
+                {
+                    MessageBox.Show("Error de login", "Asistec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    formInicio frm = new formInicio();
+                    frm.Show();
+                    this.Hide();
+
+                }
+            }
+        }
     }
 }

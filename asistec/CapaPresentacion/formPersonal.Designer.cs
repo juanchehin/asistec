@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPersonal));
             this.dataListadoPersonal = new System.Windows.Forms.DataGridView();
             this.btnNuevoPersonal = new System.Windows.Forms.Button();
@@ -53,17 +54,26 @@
             this.dataListadoPersonal.AllowUserToResizeColumns = false;
             this.dataListadoPersonal.AllowUserToResizeRows = false;
             this.dataListadoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoPersonal.Location = new System.Drawing.Point(118, 63);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListadoPersonal.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataListadoPersonal.Location = new System.Drawing.Point(118, 85);
             this.dataListadoPersonal.Name = "dataListadoPersonal";
-            this.dataListadoPersonal.Size = new System.Drawing.Size(803, 428);
+            this.dataListadoPersonal.Size = new System.Drawing.Size(917, 457);
             this.dataListadoPersonal.TabIndex = 2;
             this.dataListadoPersonal.SelectionChanged += new System.EventHandler(this.dataListadoPersonal_SelectionChanged);
             // 
             // btnNuevoPersonal
             // 
-            this.btnNuevoPersonal.Location = new System.Drawing.Point(565, 6);
+            this.btnNuevoPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPersonal.Location = new System.Drawing.Point(694, 6);
             this.btnNuevoPersonal.Name = "btnNuevoPersonal";
-            this.btnNuevoPersonal.Size = new System.Drawing.Size(99, 31);
+            this.btnNuevoPersonal.Size = new System.Drawing.Size(158, 31);
             this.btnNuevoPersonal.TabIndex = 3;
             this.btnNuevoPersonal.Text = "Agregar personal";
             this.btnNuevoPersonal.UseVisualStyleBackColor = true;
@@ -73,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(740, 40);
+            this.label1.Location = new System.Drawing.Point(811, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 4;
@@ -83,7 +93,7 @@
             // 
             this.lblTotalPersonal.AutoSize = true;
             this.lblTotalPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPersonal.Location = new System.Drawing.Point(882, 40);
+            this.lblTotalPersonal.Location = new System.Drawing.Point(953, 62);
             this.lblTotalPersonal.Name = "lblTotalPersonal";
             this.lblTotalPersonal.Size = new System.Drawing.Size(18, 20);
             this.lblTotalPersonal.TabIndex = 5;
@@ -101,8 +111,9 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.Location = new System.Drawing.Point(884, 6);
+            this.btnActualizar.Location = new System.Drawing.Point(963, 6);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(34, 31);
             this.btnActualizar.TabIndex = 5;
@@ -111,9 +122,10 @@
             // 
             // btnMarcarAsistencia
             // 
-            this.btnMarcarAsistencia.Location = new System.Drawing.Point(670, 6);
+            this.btnMarcarAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcarAsistencia.Location = new System.Drawing.Point(523, 6);
             this.btnMarcarAsistencia.Name = "btnMarcarAsistencia";
-            this.btnMarcarAsistencia.Size = new System.Drawing.Size(103, 31);
+            this.btnMarcarAsistencia.Size = new System.Drawing.Size(165, 31);
             this.btnMarcarAsistencia.TabIndex = 4;
             this.btnMarcarAsistencia.Text = "Marcar asistencia";
             this.btnMarcarAsistencia.UseVisualStyleBackColor = true;
@@ -122,33 +134,36 @@
             // btnBuscarPersonal
             // 
             this.btnBuscarPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarPersonal.Image")));
-            this.btnBuscarPersonal.Location = new System.Drawing.Point(267, 12);
+            this.btnBuscarPersonal.Location = new System.Drawing.Point(322, 28);
             this.btnBuscarPersonal.Name = "btnBuscarPersonal";
-            this.btnBuscarPersonal.Size = new System.Drawing.Size(34, 25);
+            this.btnBuscarPersonal.Size = new System.Drawing.Size(35, 31);
             this.btnBuscarPersonal.TabIndex = 2;
             this.btnBuscarPersonal.UseVisualStyleBackColor = true;
             this.btnBuscarPersonal.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(118, 17);
+            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Location = new System.Drawing.Point(118, 33);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(143, 20);
+            this.txtDNI.Size = new System.Drawing.Size(198, 26);
             this.txtDNI.TabIndex = 1;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 1);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(118, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(149, 20);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Busqueda por DNI";
+            this.label2.Text = "Busqueda por DNI :";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(779, 6);
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(858, 6);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(99, 31);
             this.btnEliminar.TabIndex = 11;
@@ -158,21 +173,23 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(846, 498);
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(924, 548);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(116, 37);
             this.btnSiguiente.TabIndex = 12;
-            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Text = "Siguiente >>";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(744, 497);
+            this.btnAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Location = new System.Drawing.Point(807, 548);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.Size = new System.Drawing.Size(111, 37);
             this.btnAnterior.TabIndex = 13;
-            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.Text = "<< Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
@@ -180,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 533);
+            this.ClientSize = new System.Drawing.Size(1047, 596);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnEliminar);
